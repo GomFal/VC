@@ -24,16 +24,28 @@ El objetivo es comprender de manera práctica la representación de imágenes en
 
 ## TAREA 5.1: Pintar círculos en las posiciones del píxel más claro y oscuro de la imagen 
 
+- **Paso 1. Captura de video**:  Se inicia la captura de video en tiempo real con la cámara.
+- **Paso 2. Procesar cada cuadro:**:  Se lee cada cuadro y se convierte a escala de grises para simplificar el cálculo de los píxeles más claro y más oscuro.
+- **Paso 3. Calcular píxeles más claro y más oscuro:**:  Se utilizan las funciones argmin() y argmax() para encontrar los índices de los píxeles más oscuro y más claro en la imagen.
+- **Paso 4. Dibujar círculos**:  Se dibujan círculos en el cuadro original alrededor de los píxeles más oscuro (círculo blanco) y más claro (círculo negro).
+- **Paso 5. Mostrar imagen**:  Se muestra el cuadro con los círculos en una ventana.
+- **Paso 6. Mostrar collage**:  Se ensamblan las versiones coloreadas en un collage horizontal.
+- **Paso 7 Finalización**:  El programa se detiene al presionar ESC, liberando los recursos de la cámara y cerrando las ventanas.
+
+
 ## TAREA 5.2: Pintar rectángulos sobre la zona 8x8 más clara y oscura
+
+
+
 
 ## TAREA 6: Llevar a cabo una propuesta propia de pop art
 
 - **Paso 1. Captura de video**:  Se inicia la captura de video en tiempo real con la cámara.
 - **Paso 2. Dimensiones de la cámara**:  Se obtienen las dimensiones originales del video y se reducen a la mitad.
 - **Paso 3. Crear collage**:  Se crea una imagen vacía que contiene cinco veces el ancho del video para mostrar las variaciones.
-- **Paso 4. Colores Pop Art: ** Se definen cinco colores (de amarillo a rojo) para aplicar un efecto de gradiente.
-- **Paso 5. Procesar cada cuadro: ** Cada cuadro del video se redimensiona y se colorea con los tintes definidos, creando cinco versiones.
-- **Paso 6. Mostrar collage: ** Se ensamblan las versiones coloreadas en un collage horizontal.
-- **Paso 7. Finalización: ** El programa se detiene al presionar ESC, liberando los recursos.
+- **Paso 4. Colores Pop Art**:  Se definen cinco colores (de amarillo a rojo) para aplicar un efecto de gradiente.
+- **Paso 5. Procesar cada cuadro**:  Cada cuadro del video se redimensiona y se colorea con los tintes definidos, creando cinco versiones.
+- **Paso 6. Mostrar collage**:  Se ensamblan las versiones coloreadas en un collage horizontal.
+- **Paso 7. Finalización**:  El programa se detiene al presionar ESC, liberando los recursos.
 
 
