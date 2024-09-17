@@ -29,8 +29,8 @@ El objetivo es comprender de manera práctica la representación de imágenes en
 <div align="center">
     <!-- Fila 1 -->
     <div>
-        <a href="./P1/tablero.jpg" target="_blank">
-            <img src="./P1/tablero.jpg" alt="Imagen 1" width="300">
+        <a href="./tablero.jpg" target="_blank">
+            <img src="./tablero.jpg" alt="Imagen 1" width="300">
         </a>
     </div>
 </div>
