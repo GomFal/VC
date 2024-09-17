@@ -29,7 +29,7 @@ El objetivo es comprender de manera práctica la representación de imágenes en
 <div align="center">
     <!-- Fila 1 -->
     <div>
-        <a href="./P5/Readme Images/1.jpg" target="_blank">
+        <a href="./P1/tablero.jpg" target="_blank">
             <img src="./P1/tablero.jpg" alt="Imagen 1" width="300">
         </a>
     </div>
@@ -48,7 +48,7 @@ El objetivo es comprender de manera práctica la representación de imágenes en
 <div align="center">
     <!-- Fila 1 -->
     <div>
-        <a href="./P5/Readme Images/1.jpg" target="_blank">
+        <a href="./P1/imagen.jpg" target="_blank">
             <img src="./P1/imagen.jpg" alt="Imagen 1" width="300">
         </a>
     </div>
@@ -67,7 +67,7 @@ El objetivo es comprender de manera práctica la representación de imágenes en
 <div align="center">
     <!-- Fila 1 -->
     <div>
-        <a href="./P5/Readme Images/1.jpg" target="_blank">
+        <a href="./P1/tablero_opencv.jpg" target="_blank">
             <img src="./P1/tablero_opencv.jpg" alt="Imagen 1" width="300">
         </a>
     </div>
