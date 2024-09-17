@@ -76,7 +76,7 @@ El objetivo es comprender de manera práctica la representación de imágenes en
 ## TAREA 4: Modifica de forma libre los valores de un plano de la imagen
 
 - **Paso 1. Captura de video**:  Se inicia la captura de video en tiempo real con la cámara.
-- **Paso 2. Procesar cada cuadro:**:  Se lee cada cuadro de la cámara
+- **Paso 2. Procesar cada cuadro**:  Se lee cada cuadro de la cámara
 - **Paso 3. Modificar un plano**: Se modifica un fragmento del canal azul (del píxel [0:100, 25:180]) asignándole el valor 1 (negro).
 - **Paso 4. Crear un collage**: Se concatenan horizontalmente los canales rojo, verde y azul para formar una imagen combinada.
 - **Paso 5. Mostrar imagen**: Se redimensiona el collage para ajustarse a la pantalla y se muestra en una ventana.
@@ -86,8 +86,8 @@ El objetivo es comprender de manera práctica la representación de imágenes en
 ## TAREA 5.1: Pintar círculos en las posiciones del píxel más claro y oscuro de la imagen 
 
 - **Paso 1. Captura de video**:  Se inicia la captura de video en tiempo real con la cámara.
-- **Paso 2. Procesar cada cuadro:**:  Se lee cada cuadro y se convierte a escala de grises para simplificar el cálculo de los píxeles más claro y más oscuro.
-- **Paso 3. Calcular píxeles más claro y más oscuro:**:  Se utilizan las funciones argmin() y argmax() para encontrar los índices de los píxeles más oscuro y más claro en la imagen.
+- **Paso 2. Procesar cada cuadro**:  Se lee cada cuadro y se convierte a escala de grises para simplificar el cálculo de los píxeles más claro y más oscuro.
+- **Paso 3. Calcular píxeles más claro y más oscuro**:  Se utilizan las funciones argmin() y argmax() para encontrar los índices de los píxeles más oscuro y más claro en la imagen.
 - **Paso 4. Dibujar círculos**:  Se dibujan círculos en el cuadro original alrededor de los píxeles más oscuro (círculo blanco) y más claro (círculo negro).
 - **Paso 5. Mostrar imagen**:  Se muestra el cuadro con los círculos en una ventana.
 - **Paso 6. Mostrar collage**:  Se ensamblan las versiones coloreadas en un collage horizontal.
