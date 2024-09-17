@@ -23,6 +23,18 @@ El objetivo es comprender de manera práctica la representación de imágenes en
 - **Paso 3. Dimensiones**: Se imprime el tamaño de la imagen resultante (800x800 con 3 canales).
 - **Paso 4. Mostrar imagen**: Se visualiza la imagen generada usando matplotlib, mostrando el patrón de ajedrez.
 
+<p>&nbsp;</p>
+
+<!-- Filas de dos fotos cada una -->
+<div align="center">
+    <!-- Fila 1 -->
+    <div>
+        <a href="./P5/Readme Images/1.jpg" target="_blank">
+            <img src="./P1/tablero.jpg" alt="Imagen 1" width="300">
+        </a>
+    </div>
+</div>
+
 ## TAREA 2: Crear una imagen estilo Mondrian
 
 - **Paso 1. Definir parámetros**: Establece tamaño de imagen, grosor de líneas y margen.
@@ -33,7 +45,14 @@ El objetivo es comprender de manera práctica la representación de imágenes en
 - **Paso 6 Visualizar imagen**: Muestra la imagen con matplotlib.
 - **Paso 7 Guardar imagen**: Guarda la imagen como 'imagen.jpg'.
 
-
+<div align="center">
+    <!-- Fila 1 -->
+    <div>
+        <a href="./P5/Readme Images/1.jpg" target="_blank">
+            <img src="./P1/imagen.jpg" alt="Imagen 1" width="300">
+        </a>
+    </div>
+</div>
 
 ## TAREA 3: Resuelve una de las tareas previas (a elegir) con las funciones de dibujo de OpenCV 
 
@@ -44,6 +63,15 @@ El objetivo es comprender de manera práctica la representación de imágenes en
       es que esta vez se coloearán los cuadros con la función cv2.rectangle()**
 - **Paso 3. Dimensiones**: Se imprime el tamaño de la imagen resultante (800x800 con 3 canales).
 - **Paso 4. Mostrar imagen**: Se visualiza la imagen generada usando matplotlib, mostrando el patrón de ajedrez.
+
+<div align="center">
+    <!-- Fila 1 -->
+    <div>
+        <a href="./P5/Readme Images/1.jpg" target="_blank">
+            <img src="./P1/tablero_opencv.jpg" alt="Imagen 1" width="300">
+        </a>
+    </div>
+</div>
 
 ## TAREA 4: Modifica de forma libre los valores de un plano de la imagen
 
