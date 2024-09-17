@@ -28,9 +28,9 @@ El objetivo es comprender de manera práctica la representación de imágenes en
 
 ## TAREA 6: Llevar a cabo una propuesta propia de pop art
 
-- **Paso 1. Captura de video: ** Se inicia la captura de video en tiempo real con la cámara.
-- **Paso 2. Dimensiones de la cámara: ** Se obtienen las dimensiones originales del video y se reducen a la mitad.
-- **Paso 3. Crear collage: ** Se crea una imagen vacía que contiene cinco veces el ancho del video para mostrar las variaciones.
+- **Paso 1. Captura de video**:  Se inicia la captura de video en tiempo real con la cámara.
+- **Paso 2. Dimensiones de la cámara**:  Se obtienen las dimensiones originales del video y se reducen a la mitad.
+- **Paso 3. Crear collage**:  Se crea una imagen vacía que contiene cinco veces el ancho del video para mostrar las variaciones.
 - **Paso 4. Colores Pop Art: ** Se definen cinco colores (de amarillo a rojo) para aplicar un efecto de gradiente.
 - **Paso 5. Procesar cada cuadro: ** Cada cuadro del video se redimensiona y se colorea con los tintes definidos, creando cinco versiones.
 - **Paso 6. Mostrar collage: ** Se ensamblan las versiones coloreadas en un collage horizontal.
