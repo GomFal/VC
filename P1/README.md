@@ -16,7 +16,7 @@ El objetivo es comprender de manera práctica la representación de imágenes en
 
 ## TAREA 1: Crea una imagen, p.e. de 800x800 píxeles, con la textura del tablero de ajedrez
 
-- **Paso 1. Crear imagen: Se crea una imagen en blanco de tamaño 800x800 píxeles con tres canales (RGB).
+- **Paso 1. Crear imagen**: Se crea una imagen en blanco de tamaño 800x800 píxeles con tres canales (RGB).
 - **Paso 2. Generar patrón de ajedrez**:
       Se rellenan cuadros de 100x100 píxeles en negro, alternando las posiciones para simular un tablero de ajedrez.
       Los bucles for se encargan de rellenar las posiciones alternas para los cuadros negros.
