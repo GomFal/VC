@@ -56,7 +56,7 @@ El objetivo de esta actividad es comprender de manera práctica la representaci�
 
 ## TAREA 3: Resuelve una de las tareas previas (a elegir) con las funciones de dibujo de OpenCV 
 
-- **Paso 1. Crear imagen: Se crea una imagen en blanco de tamaño 800x800 píxeles con tres canales (RGB).
+- **Paso 1. Crear imagen**: Se crea una imagen en blanco de tamaño 800x800 píxeles con tres canales (RGB).
 - **Paso 2. Generar patrón de ajedrez**:
       Se rellenan cuadros de 100x100 píxeles en negro, alternando las posiciones para simular un tablero de ajedrez.
       Los bucles for se encargan de rellenar las posiciones alternas para los cuadros negros. **La diferencia
