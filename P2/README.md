@@ -15,11 +15,13 @@ El objetivo de esta actividad es aplicar y comprender técnicas fundamentales de
 
 ## TAREA 1: Detección de Bordes con Canny
   **Objetivo:** Aplicar el algoritmo de detección de bordes Canny en una imagen para identificar las áreas de cambio de intensidad.
+  
   - Convertir la imagen a escala de grises.
   - Usar la función cv2.Canny() para detectar bordes en la imagen.
   - Visualizar los bordes detectados y analizar la densidad de los bordes en la imagen.
   - Contar los píxeles correspondientes a los bordes y extraer información relevante de la imagen.
   **Resultado:**
+  
   - La fila con mayor porcentaje de píxeles blancos tuvo un 42%. Se encuentra en las primeras filas de la imagen.
   - Existen solo 2 filas por encima del 95% de píxeles blancos por fila.
       
@@ -38,6 +40,7 @@ El objetivo de esta actividad es aplicar y comprender técnicas fundamentales de
 
 ## TAREA 2: Detección de Bordes con Sobel
   **Objetivo:** Aplicar el algoritmo de detección de bordes Sobel en una imagen para identificar las áreas de cambio de intensidad.
+  
   - Reducir ruido de la imagen original con GaussianBlur()
   - Calcular los bordes en las direcciones horizontal y vertical y combinar los resultados con Sobel.
   - Umbralizar la imagen de Sobel, marcando los bordes como píxeles blancos.
@@ -45,6 +48,7 @@ El objetivo de esta actividad es aplicar y comprender técnicas fundamentales de
   - Calcular cuántas filas y columnas tienen más del 95% de píxeles blancos.
     
   **Resultado:**
+  
   - Se obtiene un valor máximo de 0.31% de píxeles blancos en la imagen **Sobel**.
   - Hay 3 filas con píxeles blancos que se encuentran por encima del 95%, siendo el 100% la fila con mayor cantidad de píxeles blancos.
   - Existe 1 columna por encima del 95%.
@@ -61,7 +65,8 @@ El objetivo de esta actividad es aplicar y comprender técnicas fundamentales de
 </div>
 
 ## TAREA 3: Show de Conocimientos.  
-  **Objetivos:** Capturar la webcam en tiempo real y mostrar un collage en el que se aplican varios efectos de procesamiento de imágenes: tinte sepia, escala de grises, suavizado, detección de bordes y umbralización.
+  **Objetivo:** Capturar la webcam en tiempo real y mostrar un collage en el que se aplican varios efectos de procesamiento de imágenes: tinte sepia, escala de grises, suavizado, detección de bordes y umbralización.
+  
   - Crear clasificador en cascada para detección de caras.
   - Recorrer la imagen, en este caso el frame, usando el detector.
   - Aplicar un cuadrado y un texto sobre la cara detectada.
@@ -77,7 +82,7 @@ El objetivo de esta actividad es aplicar y comprender técnicas fundamentales de
 </div>
 
 ## TAREA 4: Inspirarse en 3 vídeos de tratamiento de imágenes [My little piece of privacy](https://www.niklasroy.com/project/88/my-little-piece-of-privacy), [Messa di voce](https://youtu.be/GfoqiyB1ndE?feature=shared) y [Virtual air guitar](https://youtu.be/FIAmyoEpV5c?feature=shared) para crear una reinterpretación de alguna idea obtenida de esos vídeos.
-  **Objetivos:** A través de la Webcam detectar caras usando un modelo preentrenado y superponer una imagen en las          caras detectadas.
+  **Objetivo:** A través de la Webcam detectar caras usando un modelo preentrenado y superponer una imagen en las          caras detectadas.
 
 - **Paso 1. Captura de video**:  Se inicia la captura de video en tiempo real con la cámara.
 - **Paso 2. Procesar cada cuadro**:  Se lee cada cuadro de la cámara.
