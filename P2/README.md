@@ -20,6 +20,7 @@
   - Usar la función cv2.Canny() para detectar bordes en la imagen.
   - Visualizar los bordes detectados y analizar la densidad de los bordes en la imagen.
   - Contar los píxeles correspondientes a los bordes y extraer información relevante de la imagen.
+  
   **Resultado:**
 
   - La fila con mayor porcentaje de píxeles blancos tuvo un 42%. Se encuentra en las primeras filas de la imagen.
