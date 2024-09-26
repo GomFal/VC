@@ -33,7 +33,7 @@
     <!-- Fila 1 -->
     <div>
         <a href="./Tarea_1.JPG" target="_blank">
-            <img src="./Tarea_1.JPG" alt="Imagen 1" width="300">
+            <img src="./Tarea_1.JPG" alt="Imagen 1" width="600">
         </a>
     </div>
 </div>
@@ -59,7 +59,7 @@
     <!-- Fila 1 -->
     <div>
         <a href="./Tarea_2.JPG" target="_blank">
-            <img src="./Tarea_2.JPG" alt="Imagen 1" width="300">
+            <img src="./Tarea_2.JPG" alt="Imagen 1" width="700">
         </a>
     </div>
 </div>
@@ -76,7 +76,7 @@
     <!-- Fila 1 -->
     <div>
         <a href="./Tarea_3.JPG" target="_blank">
-            <img src="./Tarea_3.JPG" alt="Imagen 1" width="300">
+            <img src="./Tarea_3.JPG" alt="Imagen 1" width="900">
         </a>
     </div>
 </div>
