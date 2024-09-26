@@ -33,7 +33,7 @@
     <!-- Fila 1 -->
     <div>
         <a href="./tablero.jpg" target="_blank">
-            <img src="./tablero.jpg" alt="Imagen 1" width="300">
+            <img src="./TAREA_1.JPG" alt="Imagen 1" width="300">
         </a>
     </div>
 </div>
@@ -59,7 +59,7 @@
     <!-- Fila 1 -->
     <div>
         <a href="./imagen.jpg" target="_blank">
-            <img src="./imagen.jpg" alt="Imagen 1" width="300">
+            <img src="./TAREA_2.JPG" alt="Imagen 1" width="300">
         </a>
     </div>
 </div>
@@ -76,7 +76,7 @@
     <!-- Fila 1 -->
     <div>
         <a href="./tablero_opencv.jpg" target="_blank">
-            <img src="./tablero_opencv.jpg" alt="Imagen 1" width="300">
+            <img src="./TAREA_3.JPG" alt="Imagen 1" width="300">
         </a>
     </div>
 </div>
@@ -95,7 +95,7 @@
     <!-- Fila 1 -->
     <div>
         <a href="./resultado_Tarea_4.JPG" target="_blank">
-            <img src="./resultado_Tarea_4.JPG" alt="Imagen 4" width="300">
+            <img src="./TAREA_4.JPG" alt="Imagen 4" width="300">
         </a>
     </div>
 </div>
