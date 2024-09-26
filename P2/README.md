@@ -19,6 +19,10 @@ El objetivo de esta actividad es aplicar y comprender técnicas fundamentales de
   - Usar la función cv2.Canny() para detectar bordes en la imagen.
   - Visualizar los bordes detectados y analizar la densidad de los bordes en la imagen.
   - Contar los píxeles correspondientes a los bordes y extraer información relevante de la imagen.
+**Resultado:**
+    - La fila con mayor porcentaje de píxeles blancos tuvo un 42%. Se encuentra en las primeras filas de la imagen.
+    - Existen solo 2 filas por encima del 95% de píxeles blancos por fila.
+      
 
 <p>&nbsp;</p>
 
@@ -32,15 +36,20 @@ El objetivo de esta actividad es aplicar y comprender técnicas fundamentales de
     </div>
 </div>
 
-## TAREA 2: Crear una imagen estilo Mondrian
+## TAREA 2: Detección de Bordes con Sobel
+  **Objetivo:** Aplicar el algoritmo de detección de bordes Sobel en una imagen para identificar las áreas de cambio de intensidad.
+    - Reducir ruido de la imagen original con GaussianBlur()
+    - Calcula los bordes en las direcciones horizontal y vertical y combina los resultados con Sobel.
+    - Umbraliza la imagen de Sobel, marcando los bordes como píxeles blancos.
+    - Cuenta los píxeles blancos en cada fila y columna, y normaliza los resultados.
+    - Calcula cuántas filas y columnas tienen más del 95% de píxeles blancos.
+    
+  **Resultado: **
+    - Se obtiene un valor máximo de 0.31% de píxeles blancos en la imagen **Sobel**
+    - Hay 3 filas con píxeles blancos que se encuentran por encima del 95%, siendo el 100% la fila con mayor cantidad de píxeles blancos
+    - Existe 1 columna por encima del 95% 
+    Comparado con Canny, debido al umbralizado hay mayor claridad en los bordes. Existe un menor porcentaje de pixeles     blancos en la imagen de Sobel.
 
-- **Paso 1. Definir parámetros**: Establece tamaño de imagen, grosor de líneas y margen.
-- **Paso 2. Crear imagen**: Crea una imagen blanca de 800x800 píxeles.
-- **Paso 3. Dibujar líneas horizontales**: Añade tres líneas negras horizontales.
-- **Paso 4. Dibujar líneas verticales**: Añade varias líneas negras verticales para formar una cuadrícula.
-- **Paso 5. Dibujar rectángulos**: Rellena varias áreas de la cuadrícula con rectángulos de diferentes colores.
-- **Paso 6 Visualizar imagen**: Muestra la imagen con matplotlib.
-- **Paso 7 Guardar imagen**: Guarda la imagen como 'imagen.jpg'.
 
 <div align="center">
     <!-- Fila 1 -->
@@ -51,15 +60,12 @@ El objetivo de esta actividad es aplicar y comprender técnicas fundamentales de
     </div>
 </div>
 
-## TAREA 3: Resuelve una de las tareas previas (a elegir) con las funciones de dibujo de OpenCV 
+## TAREA 3: Show de Conocimientos.  
+  **Objetivos:** Capturar la webcam en tiempo real y mostrar un collage en el que se aplican varios efectos de procesamiento de imágenes: tinte sepia, escala de grises, suavizado, detección de bordes y umbralización.
+  - Crear clasificador en cascada para detección de caras.
+  - Recorrer la imagen, en este caso el frame, usando el detector
+  - Aplicar un cuadrado y un texto sobre la cara detectada
 
-- **Paso 1. Crear imagen**: Se crea una imagen en blanco de tamaño 800x800 píxeles con tres canales (RGB).
-- **Paso 2. Generar patrón de ajedrez**:
-      Se rellenan cuadros de 100x100 píxeles en negro, alternando las posiciones para simular un tablero de ajedrez.
-      Los bucles for se encargan de rellenar las posiciones alternas para los cuadros negros. **La diferencia
-      es que esta vez se coloearán los cuadros con la función cv2.rectangle()**
-- **Paso 3. Dimensiones**: Se imprime el tamaño de la imagen resultante (800x800 con 3 canales).
-- **Paso 4. Mostrar imagen**: Se visualiza la imagen generada usando matplotlib, mostrando el patrón de ajedrez.
 
 <div align="center">
     <!-- Fila 1 -->
@@ -70,7 +76,8 @@ El objetivo de esta actividad es aplicar y comprender técnicas fundamentales de
     </div>
 </div>
 
-## TAREA 4: Modifica de forma libre los valores de un plano de la imagen
+## TAREA 4: Inspirarse en 3 vídeos de tratamiento de imágenes [My little piece of privacy](https://www.niklasroy.com/project/88/my-little-piece-of-privacy), [Messa di voce](https://youtu.be/GfoqiyB1ndE?feature=shared) y [Virtual air guitar](https://youtu.be/FIAmyoEpV5c?feature=shared) para crear una reinterpretación de alguna idea obtenida de esos vídeos.
+  **Objetivos:** A través de la Webcam detectar caras usando un modelo preentrenado y superponer una imagen en las          caras detectadas.
 
 - **Paso 1. Captura de video**:  Se inicia la captura de video en tiempo real con la cámara.
 - **Paso 2. Procesar cada cuadro**:  Se lee cada cuadro de la cámara
@@ -88,59 +95,3 @@ El objetivo de esta actividad es aplicar y comprender técnicas fundamentales de
     </div>
 </div>
 
-## TAREA 5.1: Pintar círculos en las posiciones del píxel más claro y oscuro de la imagen 
-
-- **Paso 1. Captura de video**:  Se inicia la captura de video en tiempo real con la cámara.
-- **Paso 2. Procesar cada cuadro**:  Se lee cada cuadro y se convierte a escala de grises para simplificar el cálculo de los píxeles más claro y más oscuro.
-- **Paso 3. Calcular píxeles más claro y más oscuro**:  Se utilizan las funciones argmin() y argmax() para encontrar los índices de los píxeles más oscuro y más claro en la imagen.
-- **Paso 4. Dibujar círculos**:  Se dibujan círculos en el cuadro original alrededor de los píxeles más oscuro (círculo blanco) y más claro (círculo negro).
-- **Paso 5. Mostrar imagen**:  Se muestra el cuadro con los círculos en una ventana.
-- **Paso 6. Mostrar collage**:  Se ensamblan las versiones coloreadas en un collage horizontal.
-- **Paso 7 Finalización**:  El programa se detiene al presionar ESC, liberando los recursos de la cámara y cerrando las ventanas.
-
-<div align="center">
-    <!-- Fila 1 -->
-    <div>
-        <a href="./resultado_Tarea_5_1.JPG" target="_blank">
-            <img src="./resultado_Tarea_5_1.JPG" alt="Imagen 4" width="300">
-        </a>
-    </div>
-</div>
-
-## TAREA 5.2: Pintar rectángulos sobre la zona 8x8 más clara y oscura
-
-- **Paso 1. Captura de video**:  Se inicia la captura de video en tiempo real con la cámara.
-- **Paso 2. Función de búsqueda**: Se define la función find_extreme_zone() para encontrar la zona 8x8 más clara o más oscura en la imagen en escala de grises.
-- **Paso 3. Procesar cada cuadro**: Se lee cada cuadro y se convierte a escala de grises.
-- **Paso 4. Buscar zonas más claras y oscuras**: Se utilizan las sumas de píxeles en ventanas de 8x8 para localizar las zonas más brillantes y más oscuras.
-- **Paso 5. Dibujar rectángulos**: Se dibujan rectángulos verdes en la zona más clara y rojos en la zona más oscura del cuadro.
-- **Paso 6. Mostrar imagen**: Se muestra el cuadro con los rectángulos en una ventana.
-- **Paso 7 Finalización**:  El programa se detiene al presionar ESC, liberando los recursos de la cámara y cerrando las ventanas.
-
-<div align="center">
-    <!-- Fila 1 -->
-    <div>
-        <a href="./resultado_Tarea_5_2.JPG" target="_blank">
-            <img src="./resultado_Tarea_5_2.JPG" alt="Imagen 4" width="300">
-        </a>
-    </div>
-</div>
-
-## TAREA 6: Llevar a cabo una propuesta propia de pop art
-
-- **Paso 1. Captura de video**:  Se inicia la captura de video en tiempo real con la cámara.
-- **Paso 2. Dimensiones de la cámara**:  Se obtienen las dimensiones originales del video y se reducen a la mitad.
-- **Paso 3. Crear collage**:  Se crea una imagen vacía que contiene cinco veces el ancho del video para mostrar las variaciones.
-- **Paso 4. Colores Pop Art**:  Se definen cinco colores (de amarillo a rojo) para aplicar un efecto de gradiente.
-- **Paso 5. Procesar cada cuadro**:  Cada cuadro del video se redimensiona y se colorea con los tintes definidos, creando cinco versiones.
-- **Paso 6. Mostrar collage**:  Se ensamblan las versiones coloreadas en un collage horizontal.
-- **Paso 7. Finalización**:  El programa se detiene al presionar ESC, liberando los recursos.
-
-<div align="center">
-    <!-- Fila 1 -->
-    <div>
-        <a href="./resultado_Tarea_6.JPG" target="_blank">
-            <img src="./resultado_Tarea_6.JPG" alt="Imagen 4" width="300">
-        </a>
-    </div>
-</div>
