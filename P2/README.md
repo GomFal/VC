@@ -19,7 +19,7 @@ El objetivo de esta actividad es aplicar y comprender técnicas fundamentales de
   - Usar la función cv2.Canny() para detectar bordes en la imagen.
   - Visualizar los bordes detectados y analizar la densidad de los bordes en la imagen.
   - Contar los píxeles correspondientes a los bordes y extraer información relevante de la imagen.
-**Resultado:**
+  **Resultado:**
     - La fila con mayor porcentaje de píxeles blancos tuvo un 42%. Se encuentra en las primeras filas de la imagen.
     - Existen solo 2 filas por encima del 95% de píxeles blancos por fila.
       
@@ -44,7 +44,7 @@ El objetivo de esta actividad es aplicar y comprender técnicas fundamentales de
     - Cuenta los píxeles blancos en cada fila y columna, y normaliza los resultados.
     - Calcula cuántas filas y columnas tienen más del 95% de píxeles blancos.
     
-  **Resultado: **
+  **Resultado:**
     - Se obtiene un valor máximo de 0.31% de píxeles blancos en la imagen **Sobel**
     - Hay 3 filas con píxeles blancos que se encuentran por encima del 95%, siendo el 100% la fila con mayor cantidad de píxeles blancos
     - Existe 1 columna por encima del 95% 
