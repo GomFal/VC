@@ -32,8 +32,8 @@
 <div align="center">
     <!-- Fila 1 -->
     <div>
-        <a href="./TAREA_1.JPG" target="_blank">
-            <img src="./TAREA_1.JPG" alt="Imagen 1" width="300">
+        <a href="./Tarea_1.JPG" target="_blank">
+            <img src="./Tarea_1.JPG" alt="Imagen 1" width="300">
         </a>
     </div>
 </div>
@@ -58,8 +58,8 @@
 <div align="center">
     <!-- Fila 1 -->
     <div>
-        <a href="./TAREA_2.JPG" target="_blank">
-            <img src="./TAREA_2.JPG" alt="Imagen 1" width="300">
+        <a href="./Tarea_2.JPG" target="_blank">
+            <img src="./Tarea_2.JPG" alt="Imagen 1" width="300">
         </a>
     </div>
 </div>
@@ -75,8 +75,8 @@
 <div align="center">
     <!-- Fila 1 -->
     <div>
-        <a href="./TAREA_3.JPG" target="_blank">
-            <img src="./TAREA_3.JPG" alt="Imagen 1" width="300">
+        <a href="./Tarea_3.JPG" target="_blank">
+            <img src="./Tarea_3.JPG" alt="Imagen 1" width="300">
         </a>
     </div>
 </div>
@@ -94,8 +94,8 @@
 <div align="center">
     <!-- Fila 1 -->
     <div>
-        <a href="./TAREA_4.JPG" target="_blank">
-            <img src="./TAREA_4.JPG" alt="Imagen 4" width="300">
+        <a href="./Tarea_4.JPG" target="_blank">
+            <img src="./Tarea_4.JPG" alt="Imagen 4" width="300">
         </a>
     </div>
 </div>
