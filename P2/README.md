@@ -68,14 +68,14 @@
 ## TAREA 3: Show de Conocimientos.  
   **Objetivo:** Capturar la webcam en tiempo real y mostrar un collage en el que se aplican varios efectos de procesamiento de imágenes: tinte sepia, escala de grises, suavizado, detección de bordes y umbralización.
   
-  - Aplicar el borrador de Fondo con createBackgroundSubtractorMog2.
+  - Aplicar el borrador de Fondo con createBackgroundSubtractorMog2().
   - Aplicarle el primer filtro naranja al frame normal.
-  - Pasar la imagen a escala de grises
-  - Aplicar efecto Gaussiano para quitar ruido de la imagen
-  - Calcular derivadas parciales para aplicar el efecto **Sobel**
-  - Convertir a pixeles de 8 bits con convertScaleAbs
-  - Aplicar umbralizado para que se muestren los bordes más marcados
-  - Mostrarlo todo en un collage
+  - Pasar la imagen a escala de grises.
+  - Aplicar efecto Gaussiano para quitar ruido de la imagen.
+  - Calcular derivadas parciales para aplicar el efecto **Sobel**.
+  - Transformar la imagen Sobel a pixeles de 8 bits con convertScaleAbs().
+  - Aplicar umbralizado para que se muestren los bordes más marcados.
+  - Mostrarlo todo en un collage.
 
 
 <div align="center">
