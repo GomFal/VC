@@ -86,7 +86,7 @@ El objetivo de esta actividad es comprender de manera pr√°ctica la representaci√
     <!-- Fila 1 -->
     <div>
         <a href="./resultado_Tarea_4.jpg" target="_blank">
-            <img src="./imagen.jpg" alt="Imagen 4" width="300">
+            <img src="./resultado_Tarea_4.jpg" alt="Imagen 4" width="300">
         </a>
     </div>
 </div>
@@ -105,7 +105,7 @@ El objetivo de esta actividad es comprender de manera pr√°ctica la representaci√
     <!-- Fila 1 -->
     <div>
         <a href="./resultado_Tarea_5_1.jpg" target="_blank">
-            <img src="./imagen.jpg" alt="Imagen 4" width="300">
+            <img src="./resultado_Tarea_5_1.jpg" alt="Imagen 4" width="300">
         </a>
     </div>
 </div>
@@ -124,7 +124,7 @@ El objetivo de esta actividad es comprender de manera pr√°ctica la representaci√
     <!-- Fila 1 -->
     <div>
         <a href="./resultado_Tarea_5_2.jpg" target="_blank">
-            <img src="./imagen.jpg" alt="Imagen 4" width="300">
+            <img src="./resultado_Tarea_5_2.jpg" alt="Imagen 4" width="300">
         </a>
     </div>
 </div>
@@ -143,7 +143,7 @@ El objetivo de esta actividad es comprender de manera pr√°ctica la representaci√
     <!-- Fila 1 -->
     <div>
         <a href="./resultado_Tarea_6.jpg" target="_blank">
-            <img src="./imagen.jpg" alt="Imagen 4" width="300">
+            <img src="./resultado_Tarea_6.jpg" alt="Imagen 4" width="300">
         </a>
     </div>
 </div>
