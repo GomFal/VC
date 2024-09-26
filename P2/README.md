@@ -21,7 +21,7 @@
   - Visualizar los bordes detectados y analizar la densidad de los bordes en la imagen.
   - Contar los píxeles correspondientes a los bordes y extraer información relevante de la imagen.
   **Resultado:**
-  
+
   - La fila con mayor porcentaje de píxeles blancos tuvo un 42%. Se encuentra en las primeras filas de la imagen.
   - Existen solo 2 filas por encima del 95% de píxeles blancos por fila.
       
@@ -76,7 +76,7 @@
     <!-- Fila 1 -->
     <div>
         <a href="./Tarea_3.JPG" target="_blank">
-            <img src="./Tarea_3.JPG" alt="Imagen 1" width="900">
+            <img src="./Tarea_3.JPG" alt="Imagen 1" width="1200">
         </a>
     </div>
 </div>
@@ -95,7 +95,7 @@
     <!-- Fila 1 -->
     <div>
         <a href="./Tarea_4.JPG" target="_blank">
-            <img src="./Tarea_4.JPG" alt="Imagen 4" width="300">
+            <img src="./Tarea_4.JPG" alt="Imagen 4" width="500">
         </a>
     </div>
 </div>
