@@ -1,6 +1,6 @@
 # Práctica 2 - Funciones básicas de OpenCV
 
-El objetivo de esta actividad es aplicar y comprender técnicas fundamentales de procesamiento de imágenes. Las áreas clave incluyen el análisis de píxeles, la detección de bordes, y la visualización de propiedades de las imágenes. El objetivo principal es mejorar la comprensión de estos conceptos básicos mediante la implementación de algoritmos que permiten detectar bordes, contar valores de intensidad de píxeles y visualizar características relevantes de una imagen.
+  El objetivo de esta actividad es aplicar y comprender técnicas fundamentales de procesamiento de imágenes. Las áreas clave incluyen el análisis de píxeles, la detección de bordes, y la visualización de propiedades de las imágenes. El objetivo principal es mejorar la comprensión de estos conceptos básicos mediante la implementación de algoritmos que permiten detectar bordes, contar valores de intensidad de píxeles y visualizar características relevantes de una imagen.
 ## Autores
 [![GitHub](https://img.shields.io/badge/GitHub-Javier%20Gómez%20Falcón-red?style=flat-square&logo=github)](https://github.com/GomFal)
 [![GitHub](https://img.shields.io/badge/GitHub-Cristian%20Marrero%20Vega-blue?style=flat-square&logo=github)](https://github.com/XxMARRExX)
