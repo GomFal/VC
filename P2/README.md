@@ -14,7 +14,7 @@ El objetivo de esta actividad es aplicar y comprender técnicas fundamentales de
   - NumPy
 
 ## TAREA 1: Detección de Bordes con Canny
-  **Objetivo: ** Aplicar el algoritmo de detección de bordes Canny en una imagen para identificar las áreas de cambio de intensidad.
+  **Objetivo:** Aplicar el algoritmo de detección de bordes Canny en una imagen para identificar las áreas de cambio de intensidad.
   - Convertir la imagen a escala de grises.
   - Usar la función cv2.Canny() para detectar bordes en la imagen.
   - Visualizar los bordes detectados y analizar la densidad de los bordes en la imagen.
