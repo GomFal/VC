@@ -68,9 +68,14 @@
 ## TAREA 3: Show de Conocimientos.  
   **Objetivo:** Capturar la webcam en tiempo real y mostrar un collage en el que se aplican varios efectos de procesamiento de imágenes: tinte sepia, escala de grises, suavizado, detección de bordes y umbralización.
   
-  - Crear clasificador en cascada para detección de caras.
-  - Recorrer la imagen, en este caso el frame, usando el detector.
-  - Aplicar un cuadrado y un texto sobre la cara detectada.
+  - Aplicar el borrador de Fondo con createBackgroundSubtractorMog2.
+  - Aplicarle el primer filtro naranja al frame normal.
+  - Pasar la imagen a escala de grises
+  - Aplicar efecto Gaussiano para quitar ruido de la imagen
+  - Calcular derivadas parciales para aplicar el efecto **Sobel**
+  - Convertir a pixeles de 8 bits con convertScaleAbs
+  - Aplicar umbralizado para que se muestren los bordes más marcados
+  - Mostrarlo todo en un collage
 
 
 <div align="center">
@@ -85,12 +90,9 @@
 ## TAREA 4: Inspirarse en 3 vídeos de tratamiento de imágenes [My little piece of privacy](https://www.niklasroy.com/project/88/my-little-piece-of-privacy), [Messa di voce](https://youtu.be/GfoqiyB1ndE?feature=shared) y [Virtual air guitar](https://youtu.be/FIAmyoEpV5c?feature=shared) para crear una reinterpretación de alguna idea obtenida de esos vídeos.
   **Objetivo:** A través de la Webcam detectar caras usando un modelo preentrenado y superponer una imagen en las          caras detectadas.
 
-- **Paso 1. Captura de video**:  Se inicia la captura de video en tiempo real con la cámara.
-- **Paso 2. Procesar cada cuadro**:  Se lee cada cuadro de la cámara.
-- **Paso 3. Modificar un plano**: Se modifica un fragmento del canal azul (del píxel [0:100, 25:180]) asignándole el valor 1 (negro).
-- **Paso 4. Crear un collage**: Se concatenan horizontalmente los canales rojo, verde y azul para formar una imagen combinada.
-- **Paso 5. Mostrar imagen**: Se redimensiona el collage para ajustarse a la pantalla y se muestra en una ventana.
-- **Paso 6 Finalización**:  El programa se detiene al presionar ESC, liberando los recursos de la cámara y cerrando las ventanas.
+  - Crear clasificador en cascada para detección de caras.
+  - Recorrer la imagen, en este caso el frame, usando el detector.
+  - Aplicar un cuadrado y un texto sobre la cara detectada.
 
 <div align="center">
     <!-- Fila 1 -->
