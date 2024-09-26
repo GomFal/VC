@@ -32,7 +32,7 @@
 <div align="center">
     <!-- Fila 1 -->
     <div>
-        <a href="./tablero.jpg" target="_blank">
+        <a href="./TAREA_1.JPG" target="_blank">
             <img src="./TAREA_1.JPG" alt="Imagen 1" width="300">
         </a>
     </div>
@@ -58,7 +58,7 @@
 <div align="center">
     <!-- Fila 1 -->
     <div>
-        <a href="./imagen.jpg" target="_blank">
+        <a href="./TAREA_2.JPG" target="_blank">
             <img src="./TAREA_2.JPG" alt="Imagen 1" width="300">
         </a>
     </div>
@@ -75,7 +75,7 @@
 <div align="center">
     <!-- Fila 1 -->
     <div>
-        <a href="./tablero_opencv.jpg" target="_blank">
+        <a href="./TAREA_3.JPG" target="_blank">
             <img src="./TAREA_3.JPG" alt="Imagen 1" width="300">
         </a>
     </div>
@@ -94,7 +94,7 @@
 <div align="center">
     <!-- Fila 1 -->
     <div>
-        <a href="./resultado_Tarea_4.JPG" target="_blank">
+        <a href="./TAREA_4.JPG" target="_blank">
             <img src="./TAREA_4.JPG" alt="Imagen 4" width="300">
         </a>
     </div>
