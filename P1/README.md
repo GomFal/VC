@@ -82,6 +82,14 @@ El objetivo de esta actividad es comprender de manera práctica la representaci�
 - **Paso 5. Mostrar imagen**: Se redimensiona el collage para ajustarse a la pantalla y se muestra en una ventana.
 - **Paso 6 Finalización**:  El programa se detiene al presionar ESC, liberando los recursos de la cámara y cerrando las ventanas.
 
+<div align="center">
+    <!-- Fila 1 -->
+    <div>
+        <a href="./resultado_Tarea_4.JPG" target="_blank">
+            <img src="./resultado_Tarea_4.JPG" alt="Imagen 4" width="300">
+        </a>
+    </div>
+</div>
 
 ## TAREA 5.1: Pintar círculos en las posiciones del píxel más claro y oscuro de la imagen 
 
@@ -93,6 +101,14 @@ El objetivo de esta actividad es comprender de manera práctica la representaci�
 - **Paso 6. Mostrar collage**:  Se ensamblan las versiones coloreadas en un collage horizontal.
 - **Paso 7 Finalización**:  El programa se detiene al presionar ESC, liberando los recursos de la cámara y cerrando las ventanas.
 
+<div align="center">
+    <!-- Fila 1 -->
+    <div>
+        <a href="./resultado_Tarea_5_1.JPG" target="_blank">
+            <img src="./resultado_Tarea_5_1.JPG" alt="Imagen 4" width="300">
+        </a>
+    </div>
+</div>
 
 ## TAREA 5.2: Pintar rectángulos sobre la zona 8x8 más clara y oscura
 
@@ -104,6 +120,14 @@ El objetivo de esta actividad es comprender de manera práctica la representaci�
 - **Paso 6. Mostrar imagen**: Se muestra el cuadro con los rectángulos en una ventana.
 - **Paso 7 Finalización**:  El programa se detiene al presionar ESC, liberando los recursos de la cámara y cerrando las ventanas.
 
+<div align="center">
+    <!-- Fila 1 -->
+    <div>
+        <a href="./resultado_Tarea_5_2.JPG" target="_blank">
+            <img src="./resultado_Tarea_5_2.JPG" alt="Imagen 4" width="300">
+        </a>
+    </div>
+</div>
 
 ## TAREA 6: Llevar a cabo una propuesta propia de pop art
 
@@ -115,4 +139,11 @@ El objetivo de esta actividad es comprender de manera práctica la representaci�
 - **Paso 6. Mostrar collage**:  Se ensamblan las versiones coloreadas en un collage horizontal.
 - **Paso 7. Finalización**:  El programa se detiene al presionar ESC, liberando los recursos.
 
-
+<div align="center">
+    <!-- Fila 1 -->
+    <div>
+        <a href="./resultado_Tarea_6.JPG" target="_blank">
+            <img src="./resultado_Tarea_6.JPG" alt="Imagen 4" width="300">
+        </a>
+    </div>
+</div>
