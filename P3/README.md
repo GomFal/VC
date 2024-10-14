@@ -86,6 +86,18 @@
 
 
 1. **Procesamiento inicial de la Imagen**
+  - Se recortan las imágenes para evitar posibles espacios en blanco o sombras que puedan causar falsos positivos.
+      <!-- Filas de dos fotos cada una -->
+  <div align="center">
+      <!-- Fila 1 -->
+      <div>
+          <a href="#" target="_blank">
+              <img src="./cropped_fragments.JPG" alt="Imagen 1" width="300">
+          </a>
+      </div>
+  </div>
+  
+  <p>&nbsp;</p>
   - Se umbralizan las imágenes para identificar los contornos de los objetos presentes en ellas y se ajusta el tamaño de la imagen original para que coincida con la imagen procesada.
 
 2. **Detección y Análisis de Contornos**
