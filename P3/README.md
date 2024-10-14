@@ -81,7 +81,7 @@
 
 ## TAREA 2: Detección y Segmentación de partículas entre Fragmentos, Pellets y Alquitrán.
 
-**Objetivo:** Aplicar umbralizado y preprocesamiento de imágenes para realizar un posterior conteo y una clasficicación de las partículas detectadas en las imágenes proporcionadas. 
+  **Objetivo:** Aplicar umbralizado y preprocesamiento de imágenes para realizar un posterior conteo y una clasficicación de las partículas detectadas en las imágenes proporcionadas. 
 
 
 1. **Procesamiento inicial de la Imagen**
@@ -102,7 +102,11 @@
   - Se genera un heatmap para mostrar de forma clara la distribución de los objetos clasificados.
   
   **Resultado:**
-    Con esta tarea hemos comprobado que no es una tarea trivial el hecho de que el computador sea capaz de reconocer formas. En concreto se ve que en las dos imágenes de prueba, son factores determinantes: el estado de la moneda, el brillo que pueda tener la moneda por consecuencia de la luz, las sombras que se puedan generar también a causa de la luz, la presencia de una referencia para poder clasificar las monedas y la distancia a la que se encuentra la imagen. Estos son factores que pueden hacer que el reconocimiento de formas sea una tarea complicada. 
+
+  - Se identifican 71 Fragmentos en total, de los cuales 65 han sido clasificados de manera correcta.
+  - Se identifican 51 Pellets en total, de los cuales 48 han sido clasificados de manera correcta.
+  - Se identifican 57 Tar (Alquitrán) en total, de los cuales 43 han sido clasificados de manera correcta.
+
   
 
 
