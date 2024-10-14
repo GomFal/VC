@@ -91,7 +91,7 @@
       <!-- Fila 1 -->
       <div>
           <a href="#" target="_blank">
-              <img src="./cropped_fragments.JPG" alt="Imagen 1" width="600">
+              <img src="./cropped_fragments.JPG" alt="Imagen 1" width="800">
           </a>
       </div>
   </div>
@@ -104,7 +104,7 @@
       <!-- Fila 1 -->
       <div>
           <a href="#" target="_blank">
-              <img src="./grayScale_fragments.JPG" alt="Imagen 1" width="600">
+              <img src="./grayScale_fragments.JPG" alt="Imagen 1" width="800">
           </a>
       </div>
   </div>
@@ -117,7 +117,7 @@
       <!-- Fila 1 -->
       <div>
           <a href="#" target="_blank">
-              <img src="./umbralized_fragments.JPG" alt="Imagen 1" width="600">
+              <img src="./umbralized_fragments.JPG" alt="Imagen 1" width="800">
           </a>
       </div>
   </div>
