@@ -85,21 +85,21 @@
 
 
 1. **Procesamiento inicial de la Imagen**
-- Se umbralizan las imágenes para identificar los contornos de los objetos presentes en ellas y se ajusta el tamaño de la imagen original para que coincida con la imagen procesada.
+  - Se umbralizan las imágenes para identificar los contornos de los objetos presentes en ellas y se ajusta el tamaño de la imagen original para que coincida con la imagen procesada.
 
 2. **Detección y Análisis de Contornos**
-- Se identifican los contornos de los objetos mediante cv2.findContours().
-- Se calculan propiedades como el área, perímetro, compacidad, relación de aspecto y circularidad de los contornos para ayudar en la clasificación.
-- Se utiliza el ajuste de elipses (cv2.fitEllipse()) para analizar la forma de los objetos y su excentricidad.
+  - Se identifican los contornos de los objetos mediante cv2.findContours().
+  - Se calculan propiedades como el área, perímetro, compacidad, relación de aspecto y circularidad de los contornos para ayudar en la clasificación.
+  - Se utiliza el ajuste de elipses (cv2.fitEllipse()) para analizar la forma de los objetos y su excentricidad.
 
 3. **Clasificación de Objetos**
-- Fragmentos: Se identifican por su baja compacidad y su aspecto más irregular.
-- Pellets: Generalmente son redondos y se caracterizan por una alta circularidad y una relación de aspecto cercana a 1.
-- Alquitrán: Estas partículas suelen ser más oscuras, por lo que se clasifican principalmente basándose en su valor promedio de color.
+  - Fragmentos: Se identifican por su baja compacidad y su aspecto más irregular.
+  - Pellets: Generalmente son redondos y se caracterizan por una alta circularidad y una relación de aspecto cercana a 1.
+  - Alquitrán: Estas partículas suelen ser más oscuras, por lo que se clasifican principalmente basándose en su valor promedio de color.
 
 4. **Visualización de Resultados**
-- Los resultados se visualizan mediante una matriz de confusión que compara los valores reales con los predichos.
-- Se genera un heatmap para mostrar de forma clara la distribución de los objetos clasificados.
+  - Los resultados se visualizan mediante una matriz de confusión que compara los valores reales con los predichos.
+  - Se genera un heatmap para mostrar de forma clara la distribución de los objetos clasificados.
   
 
   
