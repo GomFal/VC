@@ -87,18 +87,42 @@
 
 1. **Procesamiento inicial de la Imagen**
   - Se recortan las imágenes para evitar posibles espacios en blanco o sombras que puedan causar falsos positivos.
-      <!-- Filas de dos fotos cada una -->
   <div align="center">
       <!-- Fila 1 -->
       <div>
           <a href="#" target="_blank">
-              <img src="./cropped_fragments.JPG" alt="Imagen 1" width="300">
+              <img src="./cropped_fragments.JPG" alt="Imagen 1" width="600">
           </a>
       </div>
   </div>
   
   <p>&nbsp;</p>
-  - Se umbralizan las imágenes para identificar los contornos de los objetos presentes en ellas y se ajusta el tamaño de la imagen original para que coincida con la imagen procesada.
+  
+  - Se pasan las imágenes a escala de grises para separar mejor los contrastes de colores entre bordes y fondo.
+    
+  <div align="center">
+      <!-- Fila 1 -->
+      <div>
+          <a href="#" target="_blank">
+              <img src="./grayScale_fragments.JPG" alt="Imagen 1" width="600">
+          </a>
+      </div>
+  </div>
+
+  <p>&nbsp;</p>
+
+  - Se umbralizan las imágenes para identificar los contornos de los objetos presentes en ellas.
+
+  <div align="center">
+      <!-- Fila 1 -->
+      <div>
+          <a href="#" target="_blank">
+              <img src="./umbralized_fragments.JPG" alt="Imagen 1" width="600">
+          </a>
+      </div>
+  </div>
+
+  <p>&nbsp;</p>
 
 2. **Detección y Análisis de Contornos**
   - Se identifican los contornos de los objetos mediante cv2.findContours().
@@ -115,6 +139,18 @@
   - Se genera un heatmap para mostrar de forma clara la distribución de los objetos clasificados.
   
   **Resultado:**
+
+  <div align="center">
+      <!-- Fila 1 -->
+      <div>
+          <a href="#" target="_blank">
+              <img src="./matriz-confusion.JPG" alt="Imagen 1" width="600">
+          </a>
+      </div>
+  </div>
+
+  <p>&nbsp;</p>
+  
 
   - Se identifican 71 Fragmentos en total, de los cuales 65 han sido clasificados de manera correcta.
   - Se identifican 51 Pellets en total, de los cuales 48 han sido clasificados de manera correcta.
