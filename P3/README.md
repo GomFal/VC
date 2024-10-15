@@ -14,7 +14,7 @@
   - NumPy
   - Seaborn
 
-## TAREA 1: Detección de Bordes con Canny
+## TAREA 1: Detección de Bordes y reconocimiento de formas con la transformada de Hoe.
   **Objetivo:** Captura una o varias imágenes con monedas no solapadas. Tras visualizar la imagen, identifica de forma interactiva (por ejemplo haciendo clic en la imagen) una moneda de un valor determinado en la imagen (por ejemplo de 1€). Tras ello, la tarea se resuelve mostrando por pantalla el número de monedas y la cantidad de dinero presentes en la imagen. No hay restricciones sobre utilizar medidas geométricas o de color. ¿Qué problemas han observado?
 
   - Procedimiento seguido:
