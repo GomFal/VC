@@ -27,7 +27,7 @@
     <div>
         <a href="#práctica-3---detección-y-reconocimiento-de-formas" target="_blank">
             <img src="./VC - Prueba-Monedas1.jpg" alt="Imagen 1" width="300">
-            <img src="./VC - Prueba-Monedas2.jpg" alt="Imagen 1" width="300">
+            <img src="./VC - Prueba-Monedas2.jpg" alt="Imagen 2" width="300">
         </a>
     </div>
 </div>
@@ -40,9 +40,9 @@
 <div align="center">
     <!-- Fila 1 -->
     <div>
-        <a href="#" target="_blank">
+        <a href="#práctica-3---detección-y-reconocimiento-de-formas" target="_blank">
             <img src="./VC - Pr3_Prueba-Monedas1-FondoBlanco.png" alt="Imagen 1" width="300">
-            <img src="./VC - Pr3_Prueba-Monedas2-FondoBlanco.png" alt="Imagen 1" width="300">
+            <img src="./VC - Pr3_Prueba-Monedas2-FondoBlanco.png" alt="Imagen 2" width="300">
         </a>
     </div>
 </div>
@@ -53,32 +53,121 @@
 
 
 
-  4. Una vez hemos detectado los círculos, procedemos a aplicarle dos filtros para buscar las monedas según su color. El primer filtro se encarga de encontrar las que son de color dorado (0.10€, 0.20€, 0.50€, 1€ y 2€). El otro filtro se encarga de buscar (0.01€, 0.02€ y 0.05€), es decir, las de color cobrizo. Se usa este enfoque para que los parámetros de color estén bien segmentados y evitar falsos positivos. Finalmente se unen ambas detecciones en una misma estructura de datos.
-
-
-
-  5. Para que la visualización sea más adecuada las detecciones se superponen a la imagen original dando la sensación de que las detecciones han sido sobre la imagen original sin haber aplicado transformaciones a la imagen.
-
-
-
-  6. Finalmente se muestran los resultados. En ellos se reflejan: el número de monedas detectadas, la suma total de las monedas detectadas y de cara a comprobar la fiabilidad del sistema el error producido entre la realidad de la suma del valor y el conteo de monedas real con respecto al obtenido.
-  
-  **Resultado:**
-  Con esta tarea hemos comprobado que no es una tarea trivial el hecho de que el computador sea capaz de reconocer formas. En concreto se ve que en las dos imágenes de prueba, son factores determinantes: el estado de la moneda, el brillo que pueda tener la moneda por consecuencia de la luz, las sombras que se puedan generar también a causa de la luz, la presencia de una referencia para poder clasificar las monedas y la distancia a la que se encuentra la imagen. Estos son factores que pueden hacer que el reconocimiento de formas sea una tarea complicada. 
-  
-      
+  4. Una vez hemos detectado los círculos, procedemos a aplicarle dos filtros para buscar las monedas según su color. El primer filtro se encarga de encontrar las que son de color dorado (0.10€, 0.20€, 0.50€, 1€ y 2€). El otro filtro se encarga de buscar (0.01€, 0.02€ y 0.05€), es decir, las de color cobrizo. Se usa este enfoque para que los parámetros de color estén bien segmentados y evitar falsos positivos. Para encontrar el rango HSV, se cogieron 3 puntos relevantes correspondientes a cada categoría de monedas (Doradas o cobrizas), de forma que quedaran bien segmentadas en ambas imágenes. Finalmente se unen ambas detecciones en una misma estructura de datos.
 
 <p>&nbsp;</p>
 
-<!-- Filas de dos fotos cada una -->
+### Detección de las monedas de color dorado:
+
+  <!-- Filas de dos fotos cada una -->
 <div align="center">
     <!-- Fila 1 -->
     <div>
-        <a href="./Tarea_1.JPG" target="_blank">
-            <img src="./Tarea_1.JPG" alt="Imagen 1" width="600">
+        <a href="#práctica-3---detección-y-reconocimiento-de-formas" target="_blank">
+            <img src="./VC - Pr3_Deteccion-Doradas_1.png" alt="Imagen 1" width="300">
+            <img src="./VC - Pr3_Detección-Doradas_2.png" alt="Imagen 2" width="300">
         </a>
     </div>
 </div>
+
+<p>&nbsp;</p>
+
+### Detección de las monedas de color cobrizo:
+
+  <!-- Filas de dos fotos cada una -->
+<div align="center">
+    <!-- Fila 1 -->
+    <div>
+        <a href="#práctica-3---detección-y-reconocimiento-de-formas" target="_blank">
+            <img src="./VC - Pr3_Deteccion-Cobrizas_1.png" alt="Imagen 1" width="300">
+            <img src="./VC - Pr3_Deteccion-Cobrizas_2.png" alt="Imagen 2" width="300">
+        </a>
+    </div>
+</div>
+
+<p>&nbsp;</p>
+
+  5. Para que la visualización sea más adecuada las detecciones se superponen a la imagen original dando la sensación de que las detecciones han sido sobre la imagen original sin haber aplicado transformaciones a la imagen.
+
+ <!-- Filas de dos fotos cada una -->
+<div align="center">
+    <!-- Fila 1 -->
+    <div>
+        <a href="#práctica-3---detección-y-reconocimiento-de-formas" target="_blank">
+            <img src="./VC - Pr3_Detección-Total1.png" alt="Imagen 1" width="300">
+            <img src="./VC - Pr3_Detección-Total2.png" alt="Imagen 2" width="300">
+        </a>
+    </div>
+</div>
+
+<p>&nbsp;</p>
+
+  6. Una vez tenemos capturadas todas las monedas posibles, clicaremos en la de 0.5€ que es la que se escogió de referencia y se clasificarán las monedas restantes en base a las siguientes fórmulas.
+
+### Cálculo del Diámetro Detectado
+La fórmula para calcular el diámetro detectado del círculo es:
+
+$$ \text{diámetro detectado} = 2 \times r $$
+
+### Cálculo de la Relación de Escala
+La relación de escala entre el diámetro detectado y el diámetro real de la moneda de referencia es:
+
+$$ \text{relacion escala} = \frac{\text{diámetro real 50c}}{\text{diámetro detectado}} $$
+
+### Cálculo del Diámetro Real de las Monedas Detectadas
+Con la relación de escala, se calcula el diámetro real de cualquier moneda detectada mediante:
+
+$$ \text{diámetro real} = \text{diámetro detectado} \times \text{relacion escala} $$
+
+<p>&nbsp;</p>
+
+
+  8. Finalmente se muestran los resultados. En ellos se reflejan: el número de monedas detectadas, la suma total de las monedas detectadas y de cara a comprobar la fiabilidad del sistema el error producido entre la realidad de la suma del valor y el conteo de monedas real con respecto al obtenido.
+
+### Resultados Imagen 1.
+
+```
+Reference coin radius (50 cents): 109
+Scale ratio (mm/pixels): 0.11123853211009174
+Total money in the image: 1.51 euros, Total real: 0.94
+Resultados de la detección de monedas:
+=====================================
+Monedas de 1 céntimo detectadas: 2 --- reales: 3
+Monedas de 2 céntimos detectadas: 2 --- reales: 3
+Monedas de 5 céntimos detectadas: 1 --- reales: 1
+Monedas de 10 céntimos detectadas: 2 --- reales: 1
+Monedas de 20 céntimos detectadas: 1 --- reales: 1
+Monedas de 50 céntimos detectadas: 2 --- reales: 1
+
+Número de monedas detectadas: 10 --- Número de monedas reales:10
+Relación de escala utilizada para la detección:
+Relación de escala (mm/píxeles): 0.1112
+```
+
+### Resultados Imagen 2.
+
+```
+Reference coin radius (50 cents): 84
+Scale ratio (mm/pixels): 0.14434523809523808
+Total money in the image: 4.07 euros, Total real: 3.01
+Resultados de la detección de monedas:
+=====================================
+Monedas de 1 céntimo detectadas: 3 --- reales: 3
+Monedas de 2 céntimos detectadas: 2 --- reales: 4
+Monedas de 5 céntimos detectadas: 4 --- reales: 2
+Monedas de 10 céntimos detectadas: 1 --- reales: 1
+Monedas de 20 céntimos detectadas: 1 --- reales: 1
+Monedas de 50 céntimos detectadas: 1 --- reales: 1
+Monedas de 1 euro detectadas: 1 --- reales: 2
+Monedas de 2 euros detectadas: 1 --- reales: 0
+
+Número de monedas detectadas: 14 --- Número de monedas reales:14
+Relación de escala utilizada para la detección:
+Relación de escala (mm/píxeles): 0.1443
+```
+
+  **Conclusiones:**
+  Con esta tarea hemos comprobado que no es una tarea trivial el hecho de que el computador sea capaz de reconocer formas. En concreto se ve que en las dos imágenes de prueba, son factores determinantes: el estado de la moneda, el brillo que pueda tener la moneda por consecuencia de la luz, las sombras que se puedan generar también a causa de la luz, la presencia de una referencia para poder clasificar las monedas y la distancia a la que se encuentra la imagen. Estos son factores que pueden hacer que el reconocimiento de formas sea una tarea complicada.
 
 ## TAREA 2: Detección y Segmentación de partículas entre Fragmentos, Pellets y Alquitrán.
 
@@ -155,8 +244,3 @@
   - Se identifican 71 Fragmentos en total, de los cuales 65 han sido clasificados de manera correcta.
   - Se identifican 51 Pellets en total, de los cuales 48 han sido clasificados de manera correcta.
   - Se identifican 57 Tar (Alquitrán) en total, de los cuales 43 han sido clasificados de manera correcta.
-
-  
-
-
-
