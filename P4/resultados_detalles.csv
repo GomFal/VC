@@ -1,4 +1,4 @@
-Frame,Tipo_objeto,Confianza,ID_Tracking,x1,y1,x2,y2,Matrícula,Confianza_Matrícula,mx1,my1,mx2,my2,Texto_Matrícula
+Frame,Tipo_objeto,Confianza,ID_Tracking,x1,y1,x2,y2,Matricula,Confianza_Matricula,mx1,my1,mx2,my2,Texto_Matricula
 2,bus,0.93,1,1402,56,1918,471,4322,0.50,482,354,516,369,4322
 3,bus,0.94,1,1395,63,1918,467,42302,0.27,474,346,523,361,42302
 4,bus,0.90,1,1389,67,1918,466,822563,0.05,465,339,528,357,822563
