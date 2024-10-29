@@ -18,7 +18,8 @@ En esta práctica, se implementa un sistema de detección y reconocimiento de ob
 
 ## Dataset para el Modelo de detección de matrículas.
 
-Para el modelo específico de detección de matrículas, se utilizó un dataset personalizado que fue generado manualmente. Las imágenes del dataset fueron recopiladas de fuentes como Facebook Marketplace y varias páginas de ventas de vehículos.
+Para el modelo específico de detección de matrículas, se utilizó un [Dataset](https://alumnosulpgc-my.sharepoint.com/:f:/g/personal/cristian_marrero104_alu_ulpgc_es/EuPgtSUUUHFLn-G3qW_PqhkBr2piUigs-SEoNBzKI3VzHA?e=9Uy6d2)
+ personalizado que fue generado manualmente. Las imágenes del dataset fueron recopiladas de fuentes como Facebook Marketplace y varias páginas de ventas de vehículos.
 
 Distribución de Datos: El dataset fue dividido en:
 - 70% para entrenamiento
