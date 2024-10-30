@@ -1,0 +1,7 @@
+train: D:\Universidad\II - Ingeniería informática\Año 4\40982 - Vision por computador\VC - Prácticas Javier\VC\P4\VC_P4-NUM_PLATES\train\images
+test: D:\Universidad\II - Ingeniería informática\Año 4\40982 - Vision por computador\VC - Prácticas Javier\VC\P4\VC_P4-NUM_PLATES\test\images
+val: D:\Universidad\II - Ingeniería informática\Año 4\40982 - Vision por computador\VC - Prácticas Javier\VC\P4\VC_P4-NUM_PLATES\val\images
+
+nc: 1
+
+names: [ 'matricula' ]
