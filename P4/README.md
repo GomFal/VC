@@ -45,8 +45,8 @@ Este modelo personalizado permite que el sistema sea más preciso al detectar ma
 <div align="center">
     <!-- Fila 1 -->
     <div>
-        <a href="#práctica-3---detección-y-reconocimiento-de-formas" target="_blank">
-            <img src="./matricula_detectada.jpg" alt="Imagen 1" width="150">
+        <a href="matricula_detectada.JPG" target="_blank">
+            <img src="./matricula_detectada.JPG" alt="Imagen 1" width="150">
         </a>
     </div>
 </div>
