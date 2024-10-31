@@ -39,7 +39,19 @@ Este modelo personalizado permite que el sistema sea más preciso al detectar ma
   
   **4. Cuando se detecta un vehículo** (coche o autobús), se extrae la región de interés (ROI) correspondiente a la ubicación esperada de la matrícula. Esta región se procesa (convertida a escala de grises, aumentada en contraste, y umbralizada) para mejorar la precisión del OCR.
   
-  **5. Se utiliza EasyOCR** para el reconocimiento de texto en la imagen de la matrícula. El modelo de OCR procesa esta región de interés y, en caso de éxito, extrae el texto de la matrícula, que se almacena junto con las demás detecciones.
+  **5. Se utiliza EasyOCR** para el reconocimiento de texto en la imagen de la matrícula. El modelo de OCR procesa esta región de interés y, en caso de éxito, extrae el texto de la matrícula, que se almacena junto con las demás detecciones. Además, en el código se abre una ventana a parte del vídeo procesado con las detecciones, para ver qué imagen procesada es la que se le pasa al OCR.
+
+   <!-- Filas de dos fotos cada una -->
+<div align="center">
+    <!-- Fila 1 -->
+    <div>
+        <a href="#práctica-3---detección-y-reconocimiento-de-formas" target="_blank">
+            <img src="./matricula_detectada.jpg" alt="Imagen 1" width="150">
+        </a>
+    </div>
+</div>
+
+<p>&nbsp;</p>
   
   **6. Cada detección** (personas, vehículos y matrículas) se registra en el archivo CSV resultados_detalles.csv. Los datos registrados incluyen:
        - Tipo de objeto detectado.
