@@ -59,6 +59,7 @@ Este modelo personalizado permite que el sistema sea más preciso al detectar ma
        - ID de tracking único.
        - Coordenadas de la caja delimitadora.
        - Texto de la matrícula, si se detecta.
+       Ha de tenerse en cuenta que se pasa una expresión regular al texto detectado para guardar la matrícula como válida en el csv. Si no tiene la estructura de 4 números y 3 letras, no se escribe. Esto lo hacemos para filtrar muchas detecciones incorrectas.
   
   **8. Se genera un [vídeo de salida](https://alumnosulpgc-my.sharepoint.com/:v:/g/personal/javier_gomez105_alu_ulpgc_es/EYmuMCUek-1GnnkS4LNbWSUBfb_XX_thDoH9zQJnXzjTzQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=2biSRO)** en el cual se dibujan las cajas delimitadoras y se muestran las anotaciones relevantes, como el tipo de objeto y la matrícula reconocida (cuando disponible).
 
