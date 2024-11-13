@@ -91,11 +91,13 @@ Ambos filtros utilizan el modelo preentrenado `shape_predictor_68_face_landmarks
   - El frame procesado, con los efectos correspondientes aplicados, se muestra en una ventana titulada 'Filtro de Felicidad'.
   - Presionando la tecla 'q' se rompe el bucle y procede a finalizar la ejecución.
 
+## Resultado en GIF del filtro festivo:
+
 <div align="center">
     <!-- Ejemplo de GIF de Efecto de Máscara y Fuego desde Google Drive -->
     <div>
-        <a href="https://drive.google.com/uc?export=view&id=1HzLMGbFDBw-HHOpDrYrPmM3OKETzzV95" target="_blank">
-            <img src="https://drive.google.com/uc?export=view&id=1HzLMGbFDBw-HHOpDrYrPmM3OKETzzV95" alt="Efecto festivo en GIF" width="150">
+        <a href="https://github.com/GomFal/VC/blob/main/P5/Vc%20-%20P5.gif" target="_blank">
+            <img src="https://github.com/GomFal/VC/blob/main/P5/Vc%20-%20P5.gif" alt="Efecto festivo en GIF" width="300">
         </a>
     </div>
 </div>
