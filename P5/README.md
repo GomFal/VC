@@ -1,7 +1,7 @@
-## Proyecto de Filtros Faciales: Máscara de Dragón con efecto de Fuego y [poner el otro filtro aqui]
+## Proyecto de Filtros Faciales: Máscara de Dragón con efecto de Fuego y Filtro de fiesta.
 
 Este proyecto implementa dos filtros faciales. El primero es un filtro facial que coloca una máscara de dragón sobre la cara detectada en tiempo real. Además, cuando el sistema detecta que la boca está abierta, se generan emojis de fuego que simulan una respiración de fuego, siguiendo la posición de la boca y un ángulo ajustable. La detección facial y del estado de la boca se logra mediante el uso de la librería `dlib` para reconocimiento facial, y se visualizan en un flujo de video en tiempo real.
-El segundo filtro, [...]
+El segundo filtro, utiliza un detector de sonrisa para activar un efecto festivo. Cuando se detecta una sonrisa, el filtro superpone una corona brillante sobre la cabeza del usuario, ajustándose en tiempo real a sus movimientos para dar la impresión de que está realmente puesta. Además, confeti de colores que cae por toda la pantalla, generando una atmósfera de celebración. Al mismo tiempo, se activan conos de luz que simulan luces de discoteca.
 
 ## Autores
 [![GitHub](https://img.shields.io/badge/GitHub-Javier%20Gómez%20Falcón-red?style=flat-square&logo=github)](https://github.com/GomFal)
@@ -16,7 +16,7 @@ El segundo filtro, [...]
   - NumPy
 
 ## Modelo de detector Facial usado para la máscara del Dragón.
-Este filtro utiliza el modelo preentrenado `shape_predictor_68_face_landmarks.dat` para la detección de 68 puntos faciales clave. Este modelo se emplea para detectar la posición de la boca y otros puntos de referencia para alinear la máscara de dragón y posicionar los efectos de fuego.
+Ambos filtros utilizan el modelo preentrenado `shape_predictor_68_face_landmarks.dat` para la detección de 68 puntos faciales clave. Este modelo se emplea para detectar la posición de la boca y otros puntos de referencia para alinear la máscara de dragón y posicionar los efectos de fuego. En el caso del filtro festivo, se utiliza para poder tener una referencia sobre donde se coloca la corona y para poder detectar la sonrisa.
 
 ## Procedimiento seguido para la máscara del Dragón:
   **1. Inicialización de los Modelos y Recursos.**  
@@ -61,7 +61,41 @@ Este filtro utiliza el modelo preentrenado `shape_predictor_68_face_landmarks.da
   - **Q**: Salir del programa.
 - La detección de la boca y la activación del fuego son automáticas; los efectos se apagan cuando la boca está cerrada.
 
-## A partir de aquí descripción del segundo filtro.
+## Procedimiento seguido para filtro festivo:
 
-Este proyecto ilustra el uso de técnicas de superposición de imágenes y tracking de puntos faciales para crear un filtro visual interactivo que responde en tiempo real.
+  **1. Carga de Recursos y Modelos.**  
+  - Carga de recursos necesarios para la detección de emociones y la aplicación de efectos visuales.
+  - Se carga la imagen 'corona.png', que representa una corona que se usará cuando se detecte la emoción de felicidad.
+  - Además, se cargan todos los frames de animación desde la carpeta correspondiente para crear una animación que se superpondrá sobre toda la ventana.
+    - Para poder visualizar el confeti, primero se tuvo que sacar cada fotograma del video.
+    - Luego quitar el fondo de cada fotograma con la función previa al código de la práctica, para poder superponelo a la captura de la webcam.   
+  - Se inicializan el detector de rostros y el predictor de puntos faciales utilizando el modelo preentrenado 'shape_predictor_68_face_landmarks.dat' de dlib.
+  - Se establece la captura de video desde la cámara web.
 
+  **2. Definición de Funciones Auxiliares.**
+  - Función overlay_image_alpha permite superponer una imagen con transparencia sobre otra, manejando correctamente el canal alfa para preservar la transparencia.
+  - La función is_smiling determina si la persona en el frame está sonriendo calculando la relación entre el ancho y el alto de la boca a partir de puntos faciales específicos.
+  - La función crear_haz_cono_suave genera imágenes de haces de luz en forma de cono con bordes suaves para crear un efecto de iluminación.
+  - La función overlay_conos selecciona aleatoriamente dos de estos haces y los superpone en el frame para simular un efecto de luces de discoteca.
+
+  **3. Preparación de Efectos Visuales.**
+  - Se captura un frame inicial para obtener las dimensiones de ancho y alto del video. Con esta información, se crean múltiples haces de luz posicionados y dirigidos de manera alternada a lo largo del ancho del frame, almacenándolos en una lista para su uso posterior. También se inicializa un contador de frames que se utilizará para controlar la secuencia de animación y los efectos visuales aplicados durante la ejecución.
+
+  **4. Bucle Principal de Procesamiento de Video.**
+  - El programa entra en un bucle que procesa cada frame capturado en tiempo real.
+  - Convierte el frame a escala de grises para facilitar la detección de rostros utilizando el detector de dlib.
+  - Por cada rostro detectado, se obtienen los 68 puntos faciales clave. Se utiliza la función is_smiling para determinar si la persona está sonriendo basándose en la geometría de su boca.
+  - Si se detecta una sonrisa, se establece la emoción detectada como 'happy' y se aplican los efectos. Si no se detecta una sonrisa, la emoción se establece como 'neutral' y no se aplican efectos adicionales.
+
+  **5. Visualización y Control de Salida.**
+  - El frame procesado, con los efectos correspondientes aplicados, se muestra en una ventana titulada 'Filtro de Felicidad'.
+  - Presionando la tecla 'q' se rompe el bucle y procede a finalizar la ejecución.
+
+<div align="center">
+    <!-- Ejemplo de GIF de Efecto de Máscara y Fuego desde Google Drive -->
+    <div>
+        <a href="https://drive.google.com/uc?export=view&id=1HzLMGbFDBw-HHOpDrYrPmM3OKETzzV95" target="_blank">
+            <img src="https://drive.google.com/uc?export=view&id=1HzLMGbFDBw-HHOpDrYrPmM3OKETzzV95" alt="Efecto festivo en GIF" width="150">
+        </a>
+    </div>
+</div>
