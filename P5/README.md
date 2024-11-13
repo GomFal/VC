@@ -1,4 +1,4 @@
-## Proyecto de Filtro Facial: Máscara de Dragón y Fuego
+## Proyecto de Filtros Faciales: Máscara de Dragón con efecto de Fuego y [poner el otro filtro aqui]
 
 Este proyecto implementa un filtro facial que coloca una máscara de dragón sobre la cara detectada en tiempo real. Además, cuando el sistema detecta que la boca está abierta, se generan emojis de fuego que simulan una respiración de fuego, siguiendo la posición de la boca y un ángulo ajustable. La detección facial y del estado de la boca se logra mediante el uso de la librería `dlib` para reconocimiento facial, y se visualizan en un flujo de video en tiempo real.
 
