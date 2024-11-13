@@ -14,7 +14,7 @@ Este proyecto implementa un filtro facial que coloca una máscara de dragón sob
   - dlib
   - NumPy
 
-## Dataset de Detección Facial
+## Modelo preentrenado
 Este proyecto utiliza el modelo preentrenado `shape_predictor_68_face_landmarks.dat` para la detección de 68 puntos faciales clave. Este modelo se emplea para detectar la posición de la boca y otros puntos de referencia para alinear la máscara de dragón y posicionar los efectos de fuego.
 
 ## Procedimiento seguido:
