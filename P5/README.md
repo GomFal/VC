@@ -1,6 +1,7 @@
 ## Proyecto de Filtros Faciales: Máscara de Dragón con efecto de Fuego y [poner el otro filtro aqui]
 
-Este proyecto implementa un filtro facial que coloca una máscara de dragón sobre la cara detectada en tiempo real. Además, cuando el sistema detecta que la boca está abierta, se generan emojis de fuego que simulan una respiración de fuego, siguiendo la posición de la boca y un ángulo ajustable. La detección facial y del estado de la boca se logra mediante el uso de la librería `dlib` para reconocimiento facial, y se visualizan en un flujo de video en tiempo real.
+Este proyecto implementa dos filtros faciales. El primero es un filtro facial que coloca una máscara de dragón sobre la cara detectada en tiempo real. Además, cuando el sistema detecta que la boca está abierta, se generan emojis de fuego que simulan una respiración de fuego, siguiendo la posición de la boca y un ángulo ajustable. La detección facial y del estado de la boca se logra mediante el uso de la librería `dlib` para reconocimiento facial, y se visualizan en un flujo de video en tiempo real.
+El segundo filtro, [...]
 
 ## Autores
 [![GitHub](https://img.shields.io/badge/GitHub-Javier%20Gómez%20Falcón-red?style=flat-square&logo=github)](https://github.com/GomFal)
@@ -14,10 +15,10 @@ Este proyecto implementa un filtro facial que coloca una máscara de dragón sob
   - dlib
   - NumPy
 
-## Modelo de detector Facial usado
-Este proyecto utiliza el modelo preentrenado `shape_predictor_68_face_landmarks.dat` para la detección de 68 puntos faciales clave. Este modelo se emplea para detectar la posición de la boca y otros puntos de referencia para alinear la máscara de dragón y posicionar los efectos de fuego.
+## Modelo de detector Facial usado para la máscara del Dragón.
+Este filtro utiliza el modelo preentrenado `shape_predictor_68_face_landmarks.dat` para la detección de 68 puntos faciales clave. Este modelo se emplea para detectar la posición de la boca y otros puntos de referencia para alinear la máscara de dragón y posicionar los efectos de fuego.
 
-## Procedimiento seguido:
+## Procedimiento seguido para la máscara del Dragón:
   **1. Inicialización de los Modelos y Recursos.**  
    Se carga el modelo de predicción de puntos faciales `shape_predictor_68_face_landmarks.dat` de dlib para el seguimiento de puntos faciales, la imagen de la máscara de dragón y el efecto de fuego en formato PNG, ambos con transparencia.
 
@@ -59,6 +60,8 @@ Este proyecto utiliza el modelo preentrenado `shape_predictor_68_face_landmarks.
   - **D**: Rotar la línea de fuego a la derecha.
   - **Q**: Salir del programa.
 - La detección de la boca y la activación del fuego son automáticas; los efectos se apagan cuando la boca está cerrada.
+
+## A partir de aquí descripción del segundo filtro.
 
 Este proyecto ilustra el uso de técnicas de superposición de imágenes y tracking de puntos faciales para crear un filtro visual interactivo que responde en tiempo real.
 
