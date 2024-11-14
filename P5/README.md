@@ -48,7 +48,7 @@ Ambos filtros utilizan el modelo preentrenado `shape_predictor_68_face_landmarks
     <!-- Ejemplo de Imagen de Efecto de Máscara y Fuego -->
     <div>
         <a href="filtro_dragon_fuego.JPG" target="_blank">
-            <img src="./Demostracion_efecto.gif" alt="Filtro de Dragón y Fuego" width="150">
+            <img src="./Demostracion_efecto.gif" alt="Filtro de Dragón y Fuego" width="600">
         </a>
     </div>
 </div>
