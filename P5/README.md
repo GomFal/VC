@@ -44,6 +44,14 @@ Ambos filtros utilizan el modelo preentrenado `shape_predictor_68_face_landmarks
    - Se indican las opciones de interacción y se permite al usuario ajustar la dirección del fuego.
    - En caso de no detectar la boca o el rostro, se limpia la secuencia de emojis de fuego.
 
+## Ejecución y Controles
+- **Para iniciar el filtro**, ejecute el archivo de código.
+- **Controles**:
+  - **A**: Rotar la línea de fuego a la izquierda.
+  - **D**: Rotar la línea de fuego a la derecha.
+  - **Q**: Salir del programa.
+- La detección de la boca y la activación del fuego son automáticas; los efectos se apagan cuando la boca está cerrada.
+
 ## Resultado en GIF del filtro de Dragon
 
 <div align="center">
@@ -55,13 +63,6 @@ Ambos filtros utilizan el modelo preentrenado `shape_predictor_68_face_landmarks
     </div>
 </div>
 
-## Ejecución y Controles
-- **Para iniciar el filtro**, ejecute el archivo de código.
-- **Controles**:
-  - **A**: Rotar la línea de fuego a la izquierda.
-  - **D**: Rotar la línea de fuego a la derecha.
-  - **Q**: Salir del programa.
-- La detección de la boca y la activación del fuego son automáticas; los efectos se apagan cuando la boca está cerrada.
 
 ## Procedimiento seguido para filtro festivo:
 
