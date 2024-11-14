@@ -44,6 +44,8 @@ Ambos filtros utilizan el modelo preentrenado `shape_predictor_68_face_landmarks
    - Se indican las opciones de interacción y se permite al usuario ajustar la dirección del fuego.
    - En caso de no detectar la boca o el rostro, se limpia la secuencia de emojis de fuego.
 
+## Resultado en GIF del filtro de Dragon
+
 <div align="center">
     <!-- Ejemplo de Imagen de Efecto de Máscara y Fuego -->
     <div>
