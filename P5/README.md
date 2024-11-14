@@ -29,7 +29,7 @@ Ambos filtros utilizan el modelo preentrenado `shape_predictor_68_face_landmarks
 
   **3. Detección del Estado de la Boca.**  
    Para detectar si la boca está abierta:
-   - Se calcula la distancia entre el labio superior (punto 51) y el labio inferior (punto 57). Si esta distancia supera un umbral, se considera que la boca está abierta.
+   - Se calcula la distancia entre el labio superior (punto 51) y el labio inferior (punto 57). Si esta distancia supera un umbral determinado, se considera que la boca está abierta. Este umbral se supera cuando se cumple que la distancia del labio superior y el inferior de la boca representan el 25% o mas del tamaño de la cara, que calculamos haciendo la diferencia del punto superior e inferior de la cara.
    - Cuando la boca está abierta, el sistema inicia la secuencia de efectos de fuego.
 
   **4. Generación de Fuego.**  
