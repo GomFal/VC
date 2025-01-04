@@ -1,7 +1,6 @@
 # model.py
 import numpy as np
 from sklearn.linear_model import LinearRegression
-from sklearn.ensemble import RandomForestRegressor
 
 
 def train_model(training_data):
@@ -15,7 +14,6 @@ def train_model(training_data):
     model = LinearRegression()
     model.fit(X, y)
     return model
-
 
 
 def predict_gaze(model, eye_feat):

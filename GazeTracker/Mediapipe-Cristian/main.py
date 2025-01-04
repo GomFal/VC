@@ -12,10 +12,7 @@ import pyautogui
 # --- VARIABLES GLOBALES PARA SUAVIZADO ---
 smoothed_x = None
 smoothed_y = None
-ALPHA = 0.9  # factor de suavizado
-
-
-
+ALPHA = 0.8  # factor de suavizado
 
 def smooth_prediction(px, py):
     """
@@ -56,41 +53,6 @@ def smooth_prediction_mobile_mean(px, py):
 
     return int(smoothed_x), int(smoothed_y)
 
-
-def smooth_prediction_kalman(px, py):
-    """
-    Aplica un suavizado a la predicción de la mirada utilizando un filtro de Kalman.
-
-    Args:
-      px: Coordenada x del punto predicho.
-      py: Coordenada y del punto predicho.
-
-    Returns:
-      Una tupla con las coordenadas (x, y) suavizadas del punto.
-    """
-    global kf
-
-    # Inicializar el filtro de Kalman si es necesario
-    if not 'kf' in globals():
-        kf = KalmanFilter(dim_x=4, dim_z=2)
-        kf.x = np.array([px, py, 0, 0])  # Estado inicial (posición y velocidad)
-        kf.F = np.array([[1, 0, 1, 0],  # Matriz de transición de estado
-                         [0, 1, 0, 1],
-                         [0, 0, 1, 0],
-                         [0, 0, 0, 1]])
-        kf.H = np.array([[1, 0, 0, 0],  # Matriz de observación
-                         [0, 1, 0, 0]])
-        kf.P *= 500  # Matriz de covarianza del error de estimación
-        kf.R = 2  # Matriz de covarianza del ruido de medición
-
-    # Obtener la predicción del filtro
-    kf.predict()
-
-    # Actualizar el filtro con la nueva medición
-    kf.update(np.array([px, py]))
-
-    # Devolver la posición estimada
-    return int(kf.x[0]), int(kf.x[1])
 
 
 def main():
@@ -183,7 +145,7 @@ def main():
             if prediction:
                 pred_x, pred_y = prediction
                 # c) Suavizamos
-                s_x, s_y = smooth_prediction_mobile_mean(pred_x, pred_y)
+                s_x, s_y = smooth_prediction(pred_x, pred_y)
                 # d) Dibujamos un círculo rojo donde se estima la mirada
                 cv2.circle(canvas, (s_x, s_y), 20, (0, 0, 255), 2)
 
