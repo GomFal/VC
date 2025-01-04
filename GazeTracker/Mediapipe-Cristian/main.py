@@ -145,7 +145,7 @@ def main():
             if prediction:
                 pred_x, pred_y = prediction
                 # c) Suavizamos
-                s_x, s_y = smooth_prediction(pred_x, pred_y)
+                s_x, s_y = smooth_prediction_mobile_mean(pred_x, pred_y)
                 # d) Dibujamos un círculo rojo donde se estima la mirada
                 cv2.circle(canvas, (s_x, s_y), 20, (0, 0, 255), 2)
 
