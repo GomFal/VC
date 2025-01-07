@@ -1,41 +1,23 @@
-# main.py
 import cv2
+import pyautogui
 import numpy as np
+import time
+
 from detection import EyeDetector
 from calibration import calibrate
 from model import train_model, predict_gaze
 
-# --- VARIABLES GLOBALES PARA SUAVIZADO ---
-smoothed_x = None
-smoothed_y = None
-ALPHA = 0.8  # factor de suavizado
-
-def smooth_prediction(px, py):
-    """
-    Aplica un suavizado exponencial simple para reducir temblores.
-    """
-    global smoothed_x, smoothed_y, ALPHA
-    if smoothed_x is None or smoothed_y is None:
-        smoothed_x = px
-        smoothed_y = py
-    else:
-        smoothed_x = ALPHA * smoothed_x + (1 - ALPHA) * px
-        smoothed_y = ALPHA * smoothed_y + (1 - ALPHA) * py
-    return int(smoothed_x), int(smoothed_y)
-
-
 def main():
-    # 1. Inicializa la cámara
+    # 1. Abrimos la cámara
     cap = cv2.VideoCapture(0)
     if not cap.isOpened():
-        print("No se pudo abrir la cámara.")
+        print("[ERROR] No se pudo abrir la cámara.")
         return
 
-    # 2. Crea la ventana "Eye Tracking" en modo fullscreen
+    # 2. Creamos la ventana "Eye Tracking" para calibración e inferencia
     cv2.namedWindow("Eye Tracking", cv2.WINDOW_NORMAL)
-    cv2.setWindowProperty("Eye Tracking", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 
-    # 3. Instancia el detector de ojos
+    # 3. Creamos el detector de ojos
     eye_detector = EyeDetector(
         static_mode=False,
         max_faces=1,
@@ -43,68 +25,74 @@ def main():
         tracking_confidence=0.7
     )
 
-    # 4. Definimos la resolución de pantalla
-    screen_width = 1920
-    screen_height = 1080
+    # 4. Definimos la resolución real de tu pantalla (para calibración e inferencia)
+    SCREEN_WIDTH = 1920
+    SCREEN_HEIGHT = 1080
 
-    # 5. Definir puntos de calibración en coordenadas de PANTALLA
-    #    (ajusta si tu pantalla real tiene otra resolución)
+    # 5. Definimos tus puntos de calibración (ejemplo: 6 puntos)
     calibration_points = [
         (100, 100),
         (1820, 100),
         (100, 980),
         (1820, 980),
-        (960, 540),   # centro
-        (1820, 540)   # uno extra
+        (960, 540),  # centro
+        (1820, 540)  # extra
     ]
+    capture_time = 3  # segundos por punto
 
-    # 6. Calibración (usa la MISMA ventana, en fullscreen)
+    # 6. Llamamos a la fase de calibración
+    print("[INFO] Iniciando calibración...")
     training_data = calibrate(
-        cap=cap,
-        eye_detector=eye_detector,
-        calibration_points=calibration_points,
-        capture_time=3,
-        screen_width=screen_width,
-        screen_height=screen_height
+        cap, 
+        eye_detector,
+        calibration_points,
+        capture_time=capture_time,
+        screen_width=SCREEN_WIDTH,
+        screen_height=SCREEN_HEIGHT
     )
-    print(f"[INFO] Calibración completada. Muestras totales: {len(training_data)}")
+    print(f"[INFO] Calibración completada. Muestras recogidas: {len(training_data)}")
 
-    if len(training_data) == 0:
-        print("[ERROR] No se recogieron datos de calibración.")
+    if len(training_data) < 10:
+        print("[ERROR] No hay suficientes muestras para entrenar.")
         cap.release()
         cv2.destroyAllWindows()
         return
 
-    # 7. Entrenar modelo
+    # 7. Entrenamos el modelo
+    print("[INFO] Entrenando modelo...")
     model = train_model(training_data)
-    print("[INFO] Modelo entrenado.")
+    print("[INFO] Modelo entrenado. Fase de inferencia...")
 
-    # 8. Fase de Detección en la MISMA ventana
-    print("[INFO] Iniciando inferencia (presiona ESC para salir).")
+    # 8. Filtros de suavizado (opcional)
+    smoothed_x = None
+    smoothed_y = None
+    alpha = 0.8  # Ajusta entre 0.7 y 0.95 para más/menos suavidad
+
+    print("[INFO] Moviendo el cursor con PyAutoGUI. Presiona ESC para salir.")
 
     while True:
         ret, frame = cap.read()
         if not ret:
             break
 
-        # a) Creamos un canvas negro de la misma resolución de pantalla
-        canvas = np.zeros((screen_height, screen_width, 3), dtype=np.uint8)
-
-        # b) Detectamos la mirada
+        # Obtenemos características del ojo
         eye_feat = eye_detector.get_eye_features(frame)
         if eye_feat is not None:
-            prediction = predict_gaze(model, eye_feat)
-            if prediction:
-                pred_x, pred_y = prediction
-                # c) Suavizamos
-                s_x, s_y = smooth_prediction(pred_x, pred_y)
-                # d) Dibujamos un círculo rojo donde se estima la mirada
-                cv2.circle(canvas, (s_x, s_y), 20, (0, 0, 255), 2)
+            pred = predict_gaze(model, eye_feat)
+            if pred:
+                px, py = pred
+                # Suavizamos un poco la posición
+                if smoothed_x is None:
+                    smoothed_x, smoothed_y = px, py
+                else:
+                    smoothed_x = alpha * smoothed_x + (1 - alpha) * px
+                    smoothed_y = alpha * smoothed_y + (1 - alpha) * py
 
-        # e) Mostramos en la ventana existente
-        cv2.imshow("Eye Tracking", canvas)
+                # Movemos el cursor a la posición (suavizada) en la pantalla
+                pyautogui.moveTo(int(smoothed_x), int(smoothed_y))
 
-        if cv2.waitKey(1) & 0xFF == 27:  # ESC
+        # Para terminar, usa ESC
+        if cv2.waitKey(1) & 0xFF == 27:
             break
 
     cap.release()
