@@ -1,8 +1,6 @@
-# detection.py
 import cv2
 import mediapipe as mp
 import numpy as np
-
 
 # Inicializamos la solución de MediaPipe Face Mesh
 mp_face_mesh = mp.solutions.face_mesh
@@ -12,7 +10,6 @@ class EyeDetector:
     Clase para encapsular la detección de ojos / iris usando MediaPipe Face Mesh.
     """
     def __init__(self, static_mode=False, max_faces=1, detection_confidence=0.5, tracking_confidence=0.5):
-        # Refinar landmarks = True (importante para que reconozca el iris)
         self.face_mesh = mp_face_mesh.FaceMesh(
             static_image_mode=static_mode,
             max_num_faces=max_faces,
@@ -23,16 +20,23 @@ class EyeDetector:
 
     def get_eye_features(self, frame):
         """
-        Dado un frame BGR, retorna (eye_features) que podrían ser:
-            - [x_iris_izq, y_iris_izq, x_iris_der, y_iris_der]
-            o alguna otra representación.
+        Dado un frame BGR, retorna las coordenadas relativas al rectángulo 
+        definido por los landmarks 285, 261 para el ojo derecho y 46, 233 
+        para el izquierdo, de los landmarks 471, 468, 469 en el ojo izquierdo 
+        y 476, 473, 474 en el derecho.
+
+        Devuelve un diccionario con las características de los ojos:
+            {
+                "right_eye": [[x1, y1], [x2, y2], ...],
+                "left_eye": [[x1, y1], [x2, y2], ...]
+            }
 
         Devuelve None si no se detectó rostro.
         """
-        # 1. Convertir BGR a RGB para MediaPipe
+        # Convertir BGR a RGB para MediaPipe
         rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
-        # 2. Procesar con Face Mesh
+        # Procesar con Face Mesh
         results = self.face_mesh.process(rgb_frame)
         if not results.multi_face_landmarks:
             return None  # No se detectó ningún rostro
@@ -40,30 +44,50 @@ class EyeDetector:
         # Asumimos solo 1 rostro, tomamos el primero
         face_landmarks = results.multi_face_landmarks[0]
 
-        # Indices de landmarks relevantes para el iris.
-        # Hay diferentes mapas: 
-        #   iris right (474, 475, 476, 477) 
-        #   iris left (469, 470, 471, 472)
-        # Tomaremos uno de los landmarks centrales para cada iris.
-        # (ejemplo: 468 = centro aproximado del iris izquierdo, 473 = centro aproximado del iris derecho
-        #  según la doc de MediaPipe, pero a veces varía. Revisar la lista completa de landmarks).
-
-        # Para este ejemplo, usemos:
-        IRIS_LEFT_CENTER = 468
-        IRIS_RIGHT_CENTER = 473
-
         h, w, _ = frame.shape
 
-        # Accedemos a los landmarks
-        iris_left_lm = face_landmarks.landmark[IRIS_LEFT_CENTER]
-        iris_right_lm = face_landmarks.landmark[IRIS_RIGHT_CENTER]
+        # Puntos que definen los rectángulos de los ojos
+        RIGHT_EYE_RECT = [285, 261]  # Superior izquierdo, inferior derecho
+        LEFT_EYE_RECT = [46, 233]
 
-        # Convertir coordenadas normalizadas [0,1] → pixeles
-        x_left = int(iris_left_lm.x * w)
-        y_left = int(iris_left_lm.y * h)
-        x_right = int(iris_right_lm.x * w)
-        y_right = int(iris_right_lm.y * h)
+        # Landmarks de los ojos
+        LEFT_EYE_LANDMARKS = [471, 468, 469]
+        RIGHT_EYE_LANDMARKS = [476, 473, 474]
 
-        # Devolvemos como array np [x_izq, y_izq, x_der, y_der]
-        return np.array([x_left, y_left, x_right, y_right], dtype=np.float32)
+        # Función para obtener landmarks dentro de un rectángulo
+        def get_landmarks_in_bbox(bbox_points, eye_landmarks_indices, landmarks):
+            x_min = int(landmarks.landmark[bbox_points[0]].x * w)
+            y_min = int(landmarks.landmark[bbox_points[0]].y * h)
+            x_max = int(landmarks.landmark[bbox_points[1]].x * w)
+            y_max = int(landmarks.landmark[bbox_points[1]].y * h)
 
+            # Verificar área válida
+            if x_max == x_min or y_max == y_min:
+                return []  # Devolver lista vacía para mantener consistencia en caso de que el rectángulo sea 0
+
+            # Obtener coordenadas relativas al rectángulo
+            eye_landmarks_relative = []
+            eye_landmarks = []
+            for i in eye_landmarks_indices:
+                x = int(landmarks.landmark[i].x * w)
+                y = int(landmarks.landmark[i].y * h)
+                x_relative = (x - x_min) / (x_max - x_min)  # Normalizado entre 0 y 1
+                y_relative = (y - y_min) / (y_max - y_min)  # Normalizado entre 0 y 1
+                eye_landmarks_relative.append([x_relative, y_relative])
+                eye_landmarks.append([x, y])                # Vemos cual es más accurate de los dos, si las coordenadas relativas o las absolutas
+
+            return eye_landmarks
+
+        # Obtener landmarks para cada ojo
+        right_eye_landmarks = get_landmarks_in_bbox(RIGHT_EYE_RECT, RIGHT_EYE_LANDMARKS, face_landmarks)
+        left_eye_landmarks = get_landmarks_in_bbox(LEFT_EYE_RECT, LEFT_EYE_LANDMARKS, face_landmarks)
+
+        if not right_eye_landmarks or not left_eye_landmarks:
+            print("[INFO] Frame omitido por rectángulo inválido.")
+            return None
+
+        # Retornar las características de los ojos
+        return {
+            "right_eye": np.array(right_eye_landmarks, dtype=np.float32),
+            "left_eye": np.array(left_eye_landmarks, dtype=np.float32)
+        }

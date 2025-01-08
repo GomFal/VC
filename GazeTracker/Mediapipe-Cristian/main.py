@@ -3,8 +3,7 @@ import cv2
 import numpy as np
 from detection import EyeDetector
 from calibration import calibrate
-from model import train_model, predict_gaze
-from filterpy.kalman import KalmanFilter
+from model import train_model_with_catboost, predict_gaze, prepare_features, cross_validate_model
 from collections import deque
 import pyautogui
 
@@ -12,11 +11,11 @@ import pyautogui
 # --- VARIABLES GLOBALES PARA SUAVIZADO ---
 smoothed_x = None
 smoothed_y = None
-ALPHA = 0.8  # factor de suavizado
+ALPHA = 0.9  # factor de suavizado
 
 def smooth_prediction(px, py):
     """
-    #Aplica un suavizado exponencial simple para reducir temblores.
+    Aplica un suavizado exponencial simple para reducir temblores.
     """
     global smoothed_x, smoothed_y, ALPHA
     if smoothed_x is None or smoothed_y is None:
@@ -29,7 +28,7 @@ def smooth_prediction(px, py):
 
 
 # Historial de puntos (tamaño limitado)
-history_size = 15  # Número de muestras para suavizado
+history_size = 10  # Número de muestras para suavizado
 history_x = deque(maxlen=history_size)
 history_y = deque(maxlen=history_size)
 
@@ -123,11 +122,23 @@ def main():
         cv2.destroyAllWindows()
         return
 
-    # 7. Entrenar modelo
-    model = train_model(training_data)
+    # 7. Entrenar modelo de regresión
+    models, expected_sizes = train_model_with_catboost(training_data)
     print("[INFO] Modelo entrenado.")
 
-    # 8. Fase de Detección en la MISMA ventana
+    # 8. Validación cruzada
+    print("[INFO] Evaluando modelo con validación cruzada...")
+    #X, y, _ = prepare_features(training_data)
+
+    # Validar para coordenada X
+    #print("[INFO] Validación cruzada para la coordenada X:")
+    #cross_validate_model(X, y[:, 0], models[0])
+
+    # Validar para coordenada Y
+    #print("[INFO] Validación cruzada para la coordenada Y:")
+    #cross_validate_model(X, y[:, 1], models[1])
+
+    # 9. Fase de Detección en la MISMA ventana
     print("[INFO] Iniciando inferencia (presiona ESC para salir).")
 
     while True:
@@ -141,11 +152,11 @@ def main():
         # b) Detectamos la mirada
         eye_feat = eye_detector.get_eye_features(frame)
         if eye_feat is not None:
-            prediction = predict_gaze(model, eye_feat)
+            prediction = predict_gaze(models, eye_feat, expected_sizes)
             if prediction:
                 pred_x, pred_y = prediction
                 # c) Suavizamos
-                s_x, s_y = smooth_prediction_mobile_mean(pred_x, pred_y)
+                s_x, s_y = smooth_prediction(pred_x, pred_y)
                 # d) Dibujamos un círculo rojo donde se estima la mirada
                 cv2.circle(canvas, (s_x, s_y), 20, (0, 0, 255), 2)
 
