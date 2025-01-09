@@ -1,4 +1,3 @@
-# detection.py
 import cv2
 import mediapipe as mp
 import numpy as np
@@ -133,7 +132,7 @@ class EyeDetector:
         bbox_height = bbox_y_max - bbox_y_min
 
         # Definir un umbral como un porcentaje de la altura de la caja delimitadora
-        WINK_THRESHOLD_PERCENTAGE = 0.15  # Ajustar este valor según sea necesario
+        WINK_THRESHOLD_PERCENTAGE = 0.1  # Ajustar este valor según sea necesario
         wink_threshold = WINK_THRESHOLD_PERCENTAGE * bbox_height
 
         # Detectar si ambos ojos están cerrados si la distancia entre los párpados es menor que el umbral
@@ -151,6 +150,7 @@ class EyeDetector:
             elif time.time() - self.wink_start_time > 3:
                 print("Guiño detectado por más de 3 segundos")
                 pyautogui.hotkey('alt', 'f4')
+                time.sleep(2)                   # Esperamos para que no se detecte otro guiño seguido
                 return True
         else:
             self.wink_start_time = None
