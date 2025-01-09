@@ -5,7 +5,7 @@ Este repositorio contiene código en Python para la creación de un sistema de g
     <!-- Fila 1 -->
     <div>
         <a href="./Carátula.png" target="_blank">
-            <img src="./Imagenes/caratula.png" alt="Imagen 1" width="800">
+            <img src="./Carátula.png" alt="Carátula" width="800">
         </a>
     </div>
 </div>
